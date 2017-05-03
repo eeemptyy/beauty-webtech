@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Temp extends Migration
+class History extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,13 @@ class Temp extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('histories', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('user_id');
+            $table->integer('course_id');
+            $table->date('date_purchase');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +29,6 @@ class Temp extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('histories');
     }
 }
