@@ -18,9 +18,10 @@ class Courses extends Migration
             $table->string('name');
             $table->string('detail');
             $table->integer('price');
-            $table->integer('bonus_point');
-            $table->boolean('status');
-            $table->integer('type_id');
+            $table->integer('bonus_point')->default(0);
+            $table->boolean('status')->default(true);
+            $table->integer('type_id')->unsigned();
+            $table->string('category');
             $table->string('pic_path');
             $table->timestamps();
         });

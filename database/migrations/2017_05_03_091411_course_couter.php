@@ -14,8 +14,8 @@ class CourseCouter extends Migration
     public function up()
     {
         Schema::create('course_couter', function (Blueprint $table) {
-            $table->integer('course_id');
-            $table->integer('counter');
+            $table->integer('course_id')->unsigned();
+            $table->integer('counter')->default(0);
             $table->date('date');
             $table->timestamps();
             $table->primary(array('course_id', 'date'));

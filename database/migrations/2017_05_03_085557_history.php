@@ -15,8 +15,8 @@ class History extends Migration
     {
         Schema::create('histories', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
-            $table->integer('course_id');
+            $table->integer('user_id')->unsigned();
+            $table->integer('course_id')->unsigned();
             $table->date('date_purchase');
             $table->timestamps();
         });
