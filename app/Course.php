@@ -8,6 +8,6 @@ class Course extends Model
 {
     protected $fillable = [
         'name', 'detail', 'price', 'bonus_point',
-         'status', 'type_id', 'pic_path'
+         'status', 'type_id', 'category', 'pic_path'
     ];
 }
