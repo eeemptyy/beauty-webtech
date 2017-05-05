@@ -11,6 +11,12 @@
 |
 */
 
+Route::get('service', function () {
+    return view('servicepage');
+});
 Route::get('/', function () {
     return view('homepage');
+});
+Route::get('voucher', function () {
+    return view('voucherpage');
 });
