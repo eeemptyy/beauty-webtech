@@ -10,7 +10,7 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
         <link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.1/css/bulma.css">
         <!-- Styles -->
-        /*<style>
+        <style>
             html, body {
                 background-color: #fff;
                 color: #636b6f;
@@ -48,7 +48,7 @@
                 font-size: 84px;
             }
 
-            .links > a {
+            /*.links > a {
                 color: #636b6f;
                 padding: 0 25px;
                 font-size: 12px;
@@ -56,7 +56,7 @@
                 letter-spacing: .1rem;
                 text-decoration: none;
                 text-transform: uppercase;
-            }
+            }*/
 
             .m-b-md {
                 margin-bottom: 30px;
@@ -64,34 +64,30 @@
         </style>
     </head>
     <body>
-      <!-- 'name', 'detail', 'price', 'bonus_point',
-       'status', 'type_id', 'category', 'pic_path -->
-        <div class="content">
-
+      <div class="content">
           <div class="title m-b-md">
-              Product
+              Service
           </div>
 
-          <!-- <div class="" id="vue-add-singer"> -->
-            <div class="form-group">
 
-              <form action="/course/create" method = "get" >
+            <div class="form-group">
+              <form class="form-horizontal" action="/course" method = "post" >
                 {{ csrf_field() }}
                 <div class="tile ">
                   <div class="tile is-parent is-vertical is-flex-widescreen">
                     <article class="tile is-child notification is-warning">
 
-                      <label class="label">Product Name</label>
+                      <label class="label">Service Name</label>
                           <input class="input is-medium" type="text" name="name" placeholder="name">
 
-                      <label class="label">Product Detail</label>
+                      <label class="label">Service Detail</label>
                           <input class="input is-medium" type="text" name="detail" placeholder="detail">
 
-                      <label class="label">Product Price</label>
-                          <input class="input is-medium" type="text" name="price" placeholder="price">
+                      <label class="label">Service Price</label>
+                          <input class="input is-medium" type="number" name="price" placeholder="price">
 
                       <label class="label">Bonus Point</label>
-                          <input class="input is-medium" type="text" name="bonus_point" placeholder="point">
+                          <input class="input is-medium" type="number" name="bonus_point" placeholder="point">
 
                       <div class="tile is-parent is-horizontal is-flex-widescreen">
 
@@ -104,9 +100,8 @@
                                 </select>
                               </span>
                           </div>
-
                           <div class="column">
-                            <label class="label">Product Type</label>
+                            <label class="label">Service Type</label>
                                 <span class="select">
                                   <select name="type_id">
                                     <option>1</option>
@@ -114,29 +109,26 @@
                                     </select>
                                   </span>
                             </div>
-
                           <div class="column">
                               <label class="label">Category</label>
                                   <span class="select">
                                     <select name="category">
-                                      <option>Face</option>
-                                      <option>Body</option>
-                                      <option>Legs</option>
+                                      <option>ทรีทเมนท์ผิวหน้า</option>
+                                      <option>ทรีทเมนท์ผิวกาย</option>
+                                      <option>กระชับสัดส่วน</option>
+                                      <option>เลเซอร์</option>
+                                      <option>ปรับรูปหน้า</option>
                                     </select>
                                   </span>
                           </div>
                       </div>
-
-                      <label class="label">Product Picture</label>
+                      <label class="label">Service Picture</label>
                         <input class="input is-medium" type="text" name="pic_path" placeholder="picture">
                  </article>
-
                 </div>
-              </div>
             </div>
-                <button class="button is-primary" type="submit">ADD Product</button>
+                <button class="button is-primary" type="submit">ADD Service</button>
           </form>
-
         </div>
 
         <script src="/js/app.js" charset="utf-8"></script>

@@ -31,26 +31,38 @@ class CourseController extends Controller
         return view('course');
 
     }
-
+    // protected function validator(array $data)
+    // {
+    // return Validator::make($data, [
+    //   'name' => 'required|unique:',
+    //   'price' => 'required',
+    //   'bonus_point' => 'required',
+    //   'pic_path' => 'required'
+    //
+    //     // 'name' => 'required|max:255',
+    //     // 'email' => 'required|email|max:255|unique:users',
+    //     // 'password' => 'required|min:6|confirmed',
+    // ]);
+    // }
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-      $var = $request->all();
-      Course::create([
-          'name' => $var['name'],
-          'detail' => $var['detail'],
-          'price' => $var['price'],
-          'bonus_point' => $var['bonus_point'],
-          'status' => $var['status'],
-          'type_id' => $var['type_id'],
-          'category' => $var['category'],
-          'pic_path' => $var['pic_path']
-      ]);
-      return "Create Success!";
+      // $var = $request->all();
+      // Course::create([
+      //     'name' => $var['name'],
+      //     'detail' => $var['detail'],
+      //     'price' => $var['price'],
+      //     'bonus_point' => $var['bonus_point'],
+      //     'status' => $var['status'],
+      //     'type_id' => $var['type_id'],
+      //     'category' => $var['category'],
+      //     'pic_path' => $var['pic_path']
+      // ]);
+      // return view('course/create');
         //
         // echo "create";
         // return view('course');
@@ -69,7 +81,7 @@ class CourseController extends Controller
         // $Name = $request->input('')
         // CourseType::create($request->)
         $var = $request->all();
-        return Course::create([
+        Course::create([
             'name' => $var['name'],
             'detail' => $var['detail'],
             'price' => $var['price'],
@@ -79,6 +91,7 @@ class CourseController extends Controller
             'category' => $var['category'],
             'pic_path' => $var['pic_path']
         ]);
+        return view('course');
     }
 
     /**
