@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('course', 'CourseController@index');
+// Route::get('course/create', 'CourseController@create');
+Route::post('course', 'CourseController@store');
