@@ -113,8 +113,12 @@
 <h2 class="title is-1 is-centered has-text-centered">Promotions</h2>
 <br><br>
 <div class="w3-content w3-section" style="max-width:500px" id="vue-app">
+  @foreach($data as $a)
 
-  <img class="mySlides"style="width:100%" v-for="d in pic" :src= "d.path" >
+  <img class="mySlides"style="width:100%" src='{{$a->pic_path}}' alt='Test test'>
+
+  @endforeach
+  <!-- <img class="mySlides"style="width:100%" v-for="d in pic" :src= "d.path" > -->
   <!-- <img class="mySlides" src="http://www.meuanphun-land.com/images/meuanphun/home-slide-01.jpg" style="width:100%">
   <img class="mySlides" src="http://www.advancehome.co.th/img/landing_page_mar017.jpg" style="width:100%"> -->
   <!-- <img class="mySlides" src="1.png" style="width:100%"> -->

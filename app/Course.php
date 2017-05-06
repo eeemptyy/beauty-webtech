@@ -8,10 +8,14 @@ class Course extends Model
 {
     protected $fillable = [
         'name', 'detail', 'price', 'bonus_point',
-<<<<<<< Updated upstream
          'status', 'type_id', 'category', 'pic_path'
-=======
-         'status', 'type_id','category', 'pic_path'
->>>>>>> Stashed changes
     ];
+    protected  $visible = [
+        'name', 'detail', 'price', 'bonus_point',
+         'status', 'type_id', 'category', 'pic_path'
+    ];
+
+
+
+
 }
