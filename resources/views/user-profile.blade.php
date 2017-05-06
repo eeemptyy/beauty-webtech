@@ -4,14 +4,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="utf-8">
     <title></title>
-<<<<<<< HEAD
   </head>
   <body>
     <table class='table'>
       
 
     </table>
-=======
     <style media="screen">
       table, td ,th{
         border: 1px solid black;
@@ -60,7 +58,6 @@
                   @endforeach
               </tbody>
           </table>
->>>>>>> origin/tar
 
   </body>
 </html>

@@ -22,3 +22,7 @@ Route::get('voucher', function () {
 });
 
 Route::get('/{$name}', 'UserController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
