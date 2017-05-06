@@ -82,28 +82,66 @@
 $pic=array("img/10.png","img/11.png","img/12.png","img/13.png","img/14.png")
 
  ?>
+
+<!-- <a class="button is-danger is-focused"  href="#ปรับรูปหน้า">ทรีทเมนท์ผิวหน้า</a> -->
+<div class="columns is-mobile">
+  <div class="column is-6 is-offset-4 is-medium is-large">
+    <a class="button is-danger is-focused"  href="#ทรีทเมนท์ผิวหน้า">ทรีทเมนท์ผิวหน้า</a>
+
+    <a class="button is-danger is-focused"  href="#ทรีทเมนท์ผิวกาย">ทรีทเมนท์ผิวกาย</a>
+
+    <a class="button is-danger is-focused"  href="#กระชับสัดส่วน">กระชับสัดส่วน</a>
+
+    <a class="button is-danger is-focused"  href="#เลเซอร์">เลเซอร์</a>
+
+    <a class="button is-danger is-focused"  href="#ปรับรูปหน้า">ปรับรูปหน้า</a>
+  </div>
+</div>
+<br><br><br>
+<!-- <a class="button is-danger is-focused"  href="#ทรีทเมนท์ผิวหน้า">ทรีทเมนท์ผิวหน้า</a>
+
+<a class="button is-danger is-focused"  href="#ทรีทเมนท์ผิวกาย">ทรีทเมนท์ผิวกาย</a>
+
+<a class="button is-danger is-focused"  href="#กระชับสัดส่วน">กระชับสัดส่วน</a>
+
+<a class="button is-danger is-focused"  href="#เลเซอร์">เลเซอร์</a>
+
+<a class="button is-danger is-focused"  href="#ปรับรูปหน้า">ปรับรูปหน้า</a> -->
+<!--
+<a class="button is-danger is-focused">ทรีทเมนท์ผิวกาย</a>
+<a class="button is-danger is-focused">กระชับสัดส่วน</a>
+<a class="button is-danger is-focused">เลเซอร</a>
+<a class="button is-danger is-focused">ปรับรูปหน้า</a> -->
+
  @for($j = 0; $j < 5; $j++)
- <div class="columns is-multiline is-mobile" name="treatment">
+ <div class="columns is-multiline is-mobile" name="{{$types[$j]}}">
 <!-- <div class="columns is-multiline is-mobile"  id="vue-detail" v-for="(index,d) in pic"> -->
 <!-- <div class="column is-one-quarter"v-for="d in pic"> -->
+<a name="{{$types[$j]}}"></a>
+<div class="column is-one-third has-text-centered" >
+<a class="button is-danger is-outlined column is-4 is-offset-1">{{$types[$j]}}</a>
 
-<div class="column is-one-quarter" >
-
-  <h1>{{$types[$j]}}</h1>
  <!-- <img style="width:70%" src= 'img/10.png' > -->
-   <img style="width:80%" src= "{{$pic[$j]}}" >
+   <img style="width:50%" src= "{{$pic[$j]}}" >
     <!-- <img style="width:80%" :src= "d.path" > -->
 
 </div>
 
 <div class="column">
+  <br>
 @for ($i = 0; $i < count($data); $i++)
 
 @if($data[$i]->category==$types[$j])
 @if($data[$i]->type_id=='1')
-  <div class="click"> {{$data[$i]->name}}   ราคา : {{$data[$i]->price}} บาท  <img src="https://lh6.googleusercontent.com/-KHuovUcXCB0/T9P30NeOhyI/AAAAAAAACbI/Yt8JvRP8s6g/s24/plus.png" onclick="descw(this)" ></div>
+@for ($c = 0; $c < count($data_promotion); $c++)
+@if($data[$i]->id==$data_promotion[$c]->course_id)
+<!-- <img style="width:10%" src="img/promotion.gif" > -->
+@endif
+@endfor
+  <div class="click"> {{$data[$i]->name}}   ราคา : {{$data[$i]->price}} บาท   <img style="width:3%" src="img/down-arrow.png" onclick="descw(this)" ></div>
+
   <div class="desc">
-  <img src="https://lh6.googleusercontent.com/-wbz6cuxM6Tw/T9P30GA6azI/AAAAAAAACbM/O1eECuA2J7o/s24/minus.png" onclick="descc(this)" style="float:right; margin: 3px 10px 5px 5px;" >
+  <img img  src="img/up-arrow.png" onclick="descc(this)" style="float:right; margin: 3px 10px 5px 5px; width:3%;">
   <p>{{$data[$i]->detail}}</p>
   </div>
   @endif
@@ -137,8 +175,12 @@ $pic=array("img/10.png","img/11.png","img/12.png","img/13.png","img/14.png")
 
 
 <style type="text/css">
-.desc { display: none; padding: 5px; border: solid red 2px; background-color:#efefef; }
-.click {border: 2px solid green; background-color:#FF88FF; padding:5px; margin-top:5px; font-size:25px;}
+.desc { display: none; border-radius: 25px;
+    border: 2px solid red;
+    padding: 20px;  margin-top:5px; font-size:18px; }
+.click {  border-radius: 25px;
+    /*border: 2px solid #73AD21;*/
+    background: 	#FFB6C1; padding: 20px; margin-top:5px; font-size:20px; }
 .click img {float:right; margin: 3px 10px 5px 5px;}
 </style>
 

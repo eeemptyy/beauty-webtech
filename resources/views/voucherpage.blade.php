@@ -5,6 +5,11 @@
     <title>voucher</title>
     <link href='//fonts.googleapis.com/css?family=Kanit' rel='stylesheet'>
     <link rel="stylesheet" media="screen" href="css/bulma.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+    .mySlides {display:none;}
+    </style>
   </head>
   <body style="font-family:Kanit;">
 
@@ -57,7 +62,7 @@
           </h2>
         </div>
       <!-- </div> -->
-
+<div class="column "><img class="column is-2 is-offset-1"src= "img/gift-vouchers.jpg" style="width:80%"></div>
       <!-- Hero footer: will stick at the bottom -->
       <div class="hero-foot">
         <nav class="tabs">
@@ -73,17 +78,100 @@
     </section>
 
 
+
+
+<!-- <div class="w3-container">
+  <h2>Animated Slides</h2>
+  <p>Slide or fade in an element from the top, bottom, left or right of the screen with the w3-animate-* classes.</p>
+</div> -->
+<div class="w3-content w3-section" style="max-width:500px">
+@foreach($data as $a)
+@if($a->type_id=='2')
+<img class="mySlides w3-animate-left"style="width:100%" src='{{$a->pic_path}}' alt='Test test'>
+@endif
+@endforeach
+</div>
+
+@for($j = 0; $j < count($data); $j++)
+@if($data[$j]->type_id=='2')
+<div class="columns is-multiline is-mobile" name="">
+<!-- <div class="columns is-multiline is-mobile"  id="vue-detail" v-for="(index,d) in pic"> -->
+<!-- <div class="column is-one-quarter"v-for="d in pic"> -->
+
+<div class="column is-half has-text-centered" >
+
+
+  <img style="width:50%" src= "{{$data[$j]->pic_path}}" >
+
+
+</div>
+
+<div class="column">
+<br><br><br><br><br><br>
+ <div class="tag is-danger is-large"> {{$data[$j]->name}}   ใช้  {{$data[$j]->price}} Point <img src="img/coins.png" onclick="descw(this)" style="width:13%" ></div>
+
+ <br><br>
+ <div class="">
+ <!-- <img src="https://lh6.googleusercontent.com/-wbz6cuxM6Tw/T9P30GA6azI/AAAAAAAACbM/O1eECuA2J7o/s24/minus.png" onclick="descc(this)" style="float:right; margin: 3px 10px 5px 5px;" > -->
+ <p>{{$data[$j]->detail}}</p>
+ </div>
+
+
+</div>
+
+
+
+ <!-- <div class="column"> -->
+  <!-- <div  v-for="n in 5">    loop in database แบ่งตามประเภท v-for='data in allcourse database' v-if(type=ทริตเม้น)--> -->
+   <!-- <div class="click"> Division @{{n}} <img src="https://lh6.googleusercontent.com/-KHuovUcXCB0/T9P30NeOhyI/AAAAAAAACbI/Yt8JvRP8s6g/s24/plus.png" onclick="descw(this)" ></div>
+   <div class="desc">
+   <img src="https://lh6.googleusercontent.com/-wbz6cuxM6Tw/T9P30GA6azI/AAAAAAAACbM/O1eECuA2J7o/s24/minus.png" onclick="descc(this)" style="float:right; margin: 3px 10px 5px 5px;" >
+   <p>Description @{{num}}</p>
+   </div>
+   </div> -->
+ <!-- </div> -->
+<!-- </div> -->
+</div>
+@endif
+@endfor
+
+<!-- <div class="w3-content w3-section" style="max-width:500px">
+  <img class="mySlides w3-animate-left" src="img/6.png" style="width:100%">
+  <img class="mySlides w3-animate-left" src="img/7.png" style="width:100%">
+  <img class="mySlides w3-animate-left" src="img/8.png" style="width:100%">
+  <img class="mySlides w3-animate-left" src="img/9.png" style="width:100%">
+</div> -->
+
+
+
+
+
     <!-- <div class="column "><img class=""src= "img/bow2.png" style="width:20%"></div> -->
-<div class="column "><img class="column is-2 is-offset-1"src= "img/gift-vouchers.jpg" style="width:80%"></div>
+<!-- <div class="column "><img class="column is-2 is-offset-1"src= "img/gift-vouchers.jpg" style="width:80%"></div> -->
       <!-- <div class="column "><img class="column is-2 is-offset-10"src= "img/end.png" style="width:20%"></div> -->
 <!-- <div class="column "><img class="column is-2 is-offset-1"src= "img/card.png" style="width:80%"></div> -->
-
+<!--
 <div class="columns is-gapless has-text-centered">
   <div class="column "><img class="" src="img/6.png" style="width:80%"></div>
   <div class="column"><img class="" src="img/7.png" style="width:80%"></div>
   <div class="column"><img class="" src="img/8.png" style="width:80%"></div>
   <div class="column"><img class="" src="img/9.png" style="width:80%"></div>
-</div>
+</div> -->
+<script>
+var myIndex = 0;
+carousel();
 
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 2500);
+}
+</script>
   </body>
 </html>
