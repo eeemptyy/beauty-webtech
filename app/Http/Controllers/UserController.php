@@ -19,10 +19,6 @@ class UserController extends Controller
   {
     $user = DB::table('users')->where('firstname', $name)->first();
     $history = DB::table('histories')->where('user_id',$user->id)->get();
-    // foreach ($history as $data){
-    //   echo $data->user_id;
-    //   echo $data->course_id;
-    // }
     return view('user-profile',[
       'id' => $user->id,
       'firstname' => $user->firstname,
@@ -31,5 +27,17 @@ class UserController extends Controller
       'point' => $user->point,
       'history' => $history
     ]);
+  }
+
+  public function update(Request $request)
+  {
+    // $data = $request->input('name');
+    // $all = $request->all();
+    // $name = $all->firstname;
+    // DB::table('users')
+    // ->where('firstname', $name)
+    // ->update(['firstname' => $data]);
+		//return view("register",$data);
+    echo $request->input('_token');
   }
 }
