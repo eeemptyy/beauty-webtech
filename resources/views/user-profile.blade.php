@@ -20,7 +20,21 @@
     </style>
   </head>
   <body>
-    <table class="table">
+    <table class='table'>
+
+
+    </table>
+    <style media="screen">
+      table, td ,th{
+        border: 1px solid black;
+      }
+      td,td{
+        padding:10px;
+      }
+    </style>
+  </head>
+  <body>
+      <table class="table">
               <thead>
                   <tr>
                     <th>ID</th>
@@ -58,6 +72,7 @@
                   @endforeach
               </tbody>
           </table>
+<<<<<<< HEAD
           <div class="input">
           <input type="text" name="input_name" value="firstname">
           <button type="submit" name="edit">edit</button>
@@ -67,5 +82,7 @@
             <input type="text" name="name" value="">
             <input type="submit" value="สมัครสมาชิก">
           </form>
+=======
+>>>>>>> master
   </body>
 </html>
