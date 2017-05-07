@@ -130,7 +130,7 @@
                           </div>
                       </div>
                       <label class="label">Service Picture</label>
-                        <input class="input is-medium" type="text" name="pic_path" placeholder="picture">
+                        <input class="input is-medium" type="file" name="pic_path" placeholder="picture">
                  </article>
                 </div>
             </div>
