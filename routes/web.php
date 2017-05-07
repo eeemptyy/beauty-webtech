@@ -14,6 +14,19 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('course', 'CourseController@index');
 // Route::get('course/create', 'CourseController@create');
 Route::post('course', 'CourseController@store');
+
+Route::get('promotion', 'PromotionController@index');
+// Route::get('promotion', function(){
+//   $courses = Course::all();
+//   return View::make('promotion')->with('Course', $courses);
+// });
+// Route::get('course/create', 'CourseController@create');
+// Route::post('promotion', 'PromotionController@store');
+
+Route::get('get-service', 'HistoryController@index');
+// Route::get('course/create', 'CourseController@create');
+Route::post('get-service', 'HistoryController@store');

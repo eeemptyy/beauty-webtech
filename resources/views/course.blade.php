@@ -4,7 +4,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Course</title>
+        <title>Add Service</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -80,9 +80,15 @@
                       <label class="label">Service Name</label>
                           <input class="input is-medium" type="text" name="name" placeholder="name">
 
-                      <label class="label">Service Detail</label>
-                          <input class="input is-medium" type="text" name="detail" placeholder="detail">
+                      <div class="form-group">
+                          <label class="label">Service Detail</label>
 
+                            <div class="col-md-10">
+                              <textarea name="detail" rows="8" cols="80"></textarea>
+                            </div>
+                          <!-- <input class="input is-medium" type="text" name="detail" placeholder="detail"> -->
+
+                      </div>
                       <label class="label">Service Price</label>
                           <input class="input is-medium" type="number" name="price" placeholder="price">
 
@@ -95,17 +101,18 @@
                             <label class="label">Status</label>
                               <span class="select">
                                 <select name="status">
-                                  <option>0</option>
-                                  <option>1</option>
+                                  <option value="1">active</option>
+                                  <option value="0">unactive</option>
                                 </select>
                               </span>
                           </div>
+
                           <div class="column">
                             <label class="label">Service Type</label>
                                 <span class="select">
                                   <select name="type_id">
-                                    <option>1</option>
-                                      <option>2</option>
+                                    <option value="1">course</option>
+                                      <option value="2">vorcher</option>
                                     </select>
                                   </span>
                             </div>
@@ -123,11 +130,12 @@
                           </div>
                       </div>
                       <label class="label">Service Picture</label>
-                        <input class="input is-medium" type="text" name="pic_path" placeholder="picture">
+                        <input class="input is-medium" type="file" name="pic_path" placeholder="picture">
                  </article>
                 </div>
             </div>
                 <button class="button is-primary" type="submit">ADD Service</button>
+                <!-- <input type="submit" value="ADD Service"> -->
           </form>
         </div>
 

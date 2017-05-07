@@ -3,7 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\History;
+use App\CourseType;
+use App\Course;
+use App\User;
+use App\CouresCouter;
 use Illuminate\Http\Request;
+use DateTime;
 
 class HistoryController extends Controller
 {
@@ -15,6 +20,11 @@ class HistoryController extends Controller
     public function index()
     {
         //
+        $types = CourseType::all();
+        $services = Course::all();
+        $users = User::all();
+        return view('get-service', ['types' => $types, 'services' => $services, 'users' => $users]);
+        // return view('get-service');
     }
 
     /**
@@ -35,7 +45,25 @@ class HistoryController extends Controller
      */
     public function store(Request $request)
     {
+        //'user_id', 'course_id', 'date_purchase'
+        $types = CourseType::all();
+        $services = Course::all();
+        $users = User::all();
+
+
+        $var = $request->all();
+        History::create([
+            'user_id' => $var['user_id'],
+            'course_id' => $var['course_id'],
+            'date_purchase' => new DateTime(),
+        ]);
+        // 'course_id', 'counter', 'date'
+        // CouresCouter::create([
+        //   'course_id' => $var['course_id'],
         //
+        //
+        // ]);
+        return view('get-service', ['types' => $types, 'services' => $services, 'users' => $users]);
     }
 
     /**
