@@ -14,7 +14,21 @@
     </style>
   </head>
   <body>
-    <table class="table">
+    <table class='table'>
+
+
+    </table>
+    <style media="screen">
+      table, td ,th{
+        border: 1px solid black;
+      }
+      td,td{
+        padding:10px;
+      }
+    </style>
+  </head>
+  <body>
+      <table class="table">
               <thead>
                   <tr>
                     <th>ID</th>
@@ -52,6 +66,5 @@
                   @endforeach
               </tbody>
           </table>
-
   </body>
 </html>

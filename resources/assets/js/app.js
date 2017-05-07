@@ -18,5 +18,19 @@ window.Vue = require('vue');
 Vue.component('example', require('./components/Example.vue'));
 
 const app = new Vue({
-    el: '#app'
+    // el: '#vue-add-singer',
+    // data: {
+    //     'name': ''
+    // },
+    // submit: function () {
+    //     axios.post('http://wongklom.dev/api/singer', {
+    //         name: this.name
+    //     }).then(function (response) {
+    //         alert(response.data);
+    //         this.name = '';
+    //     }).catch(function (error) {
+    //         alert('Error (see console log)');
+    //         console.log(error);
+    //     });
+    // }
 });
