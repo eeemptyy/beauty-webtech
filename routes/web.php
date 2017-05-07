@@ -11,9 +11,15 @@
 |
 */
 
+Route::get('service', function () {
+    return view('servicepage');
+});
 Route::get('/', function () {
     return view('homepage');
 });
 Route::get('course', 'CourseController@index');
 Route::any('course/create', 'CourseController@create');
 Route::post('course', 'CourseController@store');
+Route::get('voucher', function () {
+    return view('voucherpage');
+});
