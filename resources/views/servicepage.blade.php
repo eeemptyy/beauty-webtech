@@ -8,7 +8,7 @@
     <link rel="stylesheet" media="screen" href="css/bulma.css">
   </head>
 
-<body style="font-family:Kanit;">
+<body body style="font-family:Kanit; background: url(img/bg.png); background-attachment:fixed;">
   <section class="hero is-danger is-medium">
   <!-- Hero header: will stick at the top -->
   <div class="hero-head">
@@ -86,7 +86,7 @@ $pic=array("img/10.png","img/11.png","img/12.png","img/13.png","img/14.png")
 <!-- <a class="button is-danger is-focused"  href="#ปรับรูปหน้า">ทรีทเมนท์ผิวหน้า</a> -->
 <div class="columns is-mobile">
   <div class="column is-6 is-offset-4 is-medium is-large">
-    <a class="button is-danger is-focused"  href="#ทรีทเมนท์ผิวหน้า">ทรีทเมนท์ผิวหน้า</a>
+    <a class="button is-danger is-focused "  href="#ทรีทเมนท์ผิวหน้า">ทรีทเมนท์ผิวหน้า</a>
 
     <a class="button is-danger is-focused"  href="#ทรีทเมนท์ผิวกาย">ทรีทเมนท์ผิวกาย</a>
 
@@ -119,25 +119,25 @@ $pic=array("img/10.png","img/11.png","img/12.png","img/13.png","img/14.png")
 <!-- <div class="column is-one-quarter"v-for="d in pic"> -->
 <a name="{{$types[$j]}}"></a>
 <div class="column is-one-third has-text-centered" >
-<a class="button is-danger is-outlined column is-4 is-offset-1">{{$types[$j]}}</a>
+<a class="button is-danger is-outlined column is-5 is-offset-1  is-large">{{$types[$j]}}</a><br><br>
 
  <!-- <img style="width:70%" src= 'img/10.png' > -->
    <img style="width:50%" src= "{{$pic[$j]}}" >
     <!-- <img style="width:80%" :src= "d.path" > -->
 
 </div>
-
+<br>
 <div class="column">
-  <br>
-@for ($i = 0; $i < count($data); $i++)
 
+@for ($i = 0; $i < count($data); $i++)
 @if($data[$i]->category==$types[$j])
 @if($data[$i]->type_id=='1')
 @for ($c = 0; $c < count($data_promotion); $c++)
 @if($data[$i]->id==$data_promotion[$c]->course_id)
-<!-- <img style="width:10%" src="img/promotion.gif" > -->
+<img class = " " style="width:10%" src="img/promotion.gif" >
 @endif
 @endfor
+
   <div class="click"> {{$data[$i]->name}}   ราคา : {{$data[$i]->price}} บาท   <img style="width:3%" src="img/down-arrow.png" onclick="descw(this)" ></div>
 
   <div class="desc">
@@ -176,7 +176,7 @@ $pic=array("img/10.png","img/11.png","img/12.png","img/13.png","img/14.png")
 
 <style type="text/css">
 .desc { display: none; border-radius: 25px;
-    border: 2px solid red;
+    border: 2px solid red; background: 	#fff;
     padding: 20px;  margin-top:5px; font-size:18px; }
 .click {  border-radius: 25px;
     /*border: 2px solid #73AD21;*/

@@ -19,7 +19,7 @@
 <style>
 .mySlides {display:none;}
 </style>
-<body style="font-family:Kanit;">
+<body style="font-family:Kanit; background: url(img/bg.png); background-attachment:fixed;">
 
 
   <!-- <div class="tabs is-centered is-boxed is-medium">
@@ -109,8 +109,11 @@
      </nav>
    </div>
  </section>
- <br><br><br><br>
-<h2 class="title is-1 is-centered has-text-centered">Promotions</h2>
+ <br><br>
+<!-- <h2 class="title is-1 is-centered has-text-centered">Promotions</h2> -->
+<div class = "is-centered has-text-centered">
+  <img src="img/pro.png">
+</div>
 <br><br>
 <div class="w3-content w3-section" style="max-width:500px" id="vue-app">
   @foreach($data as $a)
@@ -128,7 +131,7 @@
 <div class="columns column is-offset-1">
 <span class="tag is-danger is-medium is-child title is-4 is-centered ">บริการ</span>
 <!-- <span class="tag is-danger is-medium is-child">บริการทั้งหมด</span> -->
-<a class="button is-danger is-outlined column is-2 is-offset-8" href="service">บริการทั้งหมด</a></span>
+<a class="button is-danger is-outlined column is-2 is-offset-8" href="service">บริการทั้งหมด</a>
 </div>
 <br><br>
 
@@ -173,7 +176,7 @@
 
 </div>
 
-<section class="hero">
+<!-- <section class="hero"> -->
   <div class="hero-body">
     <div class="container">
       <h1 class="title">
@@ -189,7 +192,7 @@
     </div>
   </div>
 
-</section>
+<!-- </section> -->
 <!-- <div>
     <img class="" src="1.png" style="width:100%">
 </div> -->
