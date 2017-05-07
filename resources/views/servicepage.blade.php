@@ -5,11 +5,12 @@
     <title>service</title>
     <!-- <link rel="stylesheet" media="screen" href="css/bulma.css"> -->
     <link href='//fonts.googleapis.com/css?family=Kanit' rel='stylesheet'>
+    <link href='//fonts.googleapis.com/css?family=Fredoka One' rel='stylesheet'>
     <link rel="stylesheet" media="screen" href="css/bulma.css">
   </head>
 
 <body body style="font-family:Kanit; background: url(img/bg.png); background-attachment:fixed;">
-  <section class="hero is-danger is-medium">
+  <section class="hero is-danger is-medium" style="font-family:Fredoka One" >
   <!-- Hero header: will stick at the top -->
   <div class="hero-head">
     <header class="nav">
@@ -49,21 +50,18 @@
 
   <!-- Hero content: will be in the middle -->
   <!-- <div class="hero-body"> -->
-    <div class="container has-text-centered">
-      <h1 class="title">
+  <br>
+    <div class="container has-text-centered"   style="font-size:70px">
         Beauty Clinic
-      </h1>
-      <h2 class="subtitle">
-        คลีนิคเสริมความงาม
-      </h2>
     </div>
+    <br>
   <!-- </div> -->
 
   <!-- Hero footer: will stick at the bottom -->
-  <div class="hero-foot">
-    <nav class="tabs">
-      <div class="container">
-        <ul>
+  <div class="hero-foot"  >
+    <nav class="tabs" >
+      <div class="container" style="font-size:20px;">
+        <ul >
           <li ><a  href="/">Home</a></li>
           <li class="is-active"><a>Service</a></li>
           <li ><a  href="voucher">Voucher</a></li>
@@ -150,18 +148,6 @@ $pic=array("img/10.png","img/11.png","img/12.png","img/13.png","img/14.png")
 
 </div>
 
-
-
-  <!-- <div class="column"> -->
-   <!-- <div  v-for="n in 5">    loop in database แบ่งตามประเภท v-for='data in allcourse database' v-if(type=ทริตเม้น)--> -->
-    <!-- <div class="click"> Division @{{n}} <img src="https://lh6.googleusercontent.com/-KHuovUcXCB0/T9P30NeOhyI/AAAAAAAACbI/Yt8JvRP8s6g/s24/plus.png" onclick="descw(this)" ></div>
-    <div class="desc">
-    <img src="https://lh6.googleusercontent.com/-wbz6cuxM6Tw/T9P30GA6azI/AAAAAAAACbM/O1eECuA2J7o/s24/minus.png" onclick="descc(this)" style="float:right; margin: 3px 10px 5px 5px;" >
-    <p>Description @{{num}}</p>
-    </div>
-    </div> -->
-  <!-- </div> -->
-<!-- </div> -->
 </div>
 @endfor
 

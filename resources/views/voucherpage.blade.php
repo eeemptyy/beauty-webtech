@@ -5,6 +5,7 @@
     <title>voucher</title>
     <link href='//fonts.googleapis.com/css?family=Kanit' rel='stylesheet'>
     <link rel="stylesheet" media="screen" href="css/bulma.css">
+    <link href='//fonts.googleapis.com/css?family=Fredoka One' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
@@ -13,7 +14,7 @@
   </head>
   <body style="font-family:Kanit; background: url(img/bg.png); background-attachment:fixed;">
 
-    <section class="hero is-danger is-medium">
+    <section class="hero is-danger is-medium" style="font-family:Fredoka One">
       <!-- Hero header: will stick at the top -->
       <div class="hero-head">
         <header class="nav">
@@ -53,20 +54,17 @@
 
       <!-- Hero content: will be in the middle -->
       <!-- <div class="hero-body"> -->
-        <div class="container has-text-centered">
-          <h1 class="title">
+      <br>
+        <div class="container has-text-centered"   style="font-size:70px">
             Beauty Clinic
-          </h1>
-          <h2 class="subtitle">
-            คลีนิคเสริมความงาม
-          </h2>
         </div>
+        <br>
       <!-- </div> -->
 <div class="column "><img class="column is-2 is-offset-1"src= "img/gift-vouchers.jpg" style="width:80%"></div>
       <!-- Hero footer: will stick at the bottom -->
       <div class="hero-foot">
         <nav class="tabs">
-          <div class="container">
+          <div class="container" style="font-size:20px;">
             <ul>
               <li ><a href="/">Home</a></li>
               <li><a href="service">Service</a></li>
@@ -87,7 +85,7 @@
 <div class="w3-content w3-section" style="max-width:500px">
 @foreach($data as $a)
 @if($a->type_id=='2')
-<img class="mySlides w3-animate-left"style="width:100%" src='{{$a->pic_path}}' alt='Test test'>
+<img class="mySlides w3-animate-left"style="width:100%" src='img/{{$a->pic_path}}' alt='Test test'>
 @endif
 @endforeach
 </div>
@@ -101,7 +99,7 @@
 <div class="column is-half has-text-centered" >
 
 
-  <img style="width:50%" src= "{{$data[$j]->pic_path}}" >
+  <img style="width:50%" src= "img/{{$data[$j]->pic_path}}" >
 
 
 </div>

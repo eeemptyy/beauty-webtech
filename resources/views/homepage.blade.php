@@ -2,6 +2,7 @@
 <html style="background: url( );">
 <title>Home Page</title>
 <meta charset="utf-8">
+
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -11,6 +12,7 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link href='//fonts.googleapis.com/css?family=Kanit' rel='stylesheet'>
+<link href='//fonts.googleapis.com/css?family=Fredoka One' rel='stylesheet'>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" media="screen" href="css/bulma.css">
@@ -46,7 +48,7 @@
   </div>
  -->
 
- <section class="hero is-danger is-medium">
+ <section class="hero is-danger is-medium" style="font-family:Fredoka One">
    <!-- Hero header: will stick at the top -->
    <div class="hero-head">
      <header class="nav">
@@ -86,20 +88,17 @@
 
    <!-- Hero content: will be in the middle -->
    <!-- <div class="hero-body"> -->
-     <div class="container has-text-centered">
-       <h1 class="title">
+   <br>
+     <div class="container has-text-centered"   style="font-size:70px">
          Beauty Clinic
-       </h1>
-       <h2 class="subtitle">
-         คลีนิคเสริมความงาม
-       </h2>
      </div>
+     <br>
    <!-- </div> -->
 
    <!-- Hero footer: will stick at the bottom -->
    <div class="hero-foot">
      <nav class="tabs">
-       <div class="container">
+       <div class="container" style="font-size:20px;">
          <ul>
            <li class="is-active"><a>Home</a></li>
            <li><a href="service">Service</a></li>
@@ -118,7 +117,7 @@
 <div class="w3-content w3-section" style="max-width:500px" id="vue-app">
   @foreach($data as $a)
 
-  <a href='service'> <img class="mySlides"style="width:100%" src='{{$a->pic_path}}' alt='Test test' > </a>
+  <a href='service'> <img class="mySlides"style="width:100%" src='img/{{$a->pic_path}}' alt='Test test' > </a>
 
   @endforeach
   <!-- <img class="mySlides"style="width:100%" v-for="d in pic" :src= "d.path" > -->
