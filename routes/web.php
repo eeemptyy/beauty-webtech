@@ -23,3 +23,5 @@ Route::post('course', 'CourseController@store');
 Route::get('voucher', function () {
     return view('voucherpage');
 });
+
+Route::get('/{$name}', 'UserController@index');
