@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Promotion;
+use App\Course;
 use Illuminate\Http\Request;
 
 class PromotionController extends Controller
@@ -15,6 +16,10 @@ class PromotionController extends Controller
     public function index()
     {
         //
+        // $course_id = Items::where('status', true)->pluck('name', 'id');
+        // return view('promotion', );
+        $courses = Course::all();
+        return View('promotion' ,['courses' => $courses ]);
     }
 
     /**
@@ -36,6 +41,14 @@ class PromotionController extends Controller
     public function store(Request $request)
     {
         //
+        $var = $request->all();
+        Promotion::create([
+            'course_id' => $var['course_id'],
+            'discount' => $var['discount'],
+            'date_start' => $var['date_start'],
+            'date_end' => $var['date_end'],
+        ]);
+        return view('promotion');
     }
 
     /**

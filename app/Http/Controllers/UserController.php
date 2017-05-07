@@ -16,6 +16,7 @@ class UserController extends Controller
   public function index()
   {
       //
+      return view('get-service');
   }
 
   /**
@@ -71,7 +72,10 @@ class UserController extends Controller
   public function update(Request $request, Role $role)
   {
       //
-  }
+  //     DB::table('users')
+  //           ->where('id', 1)
+  //           ->update(['options->enabled' => true]);
+  // }
 
   /**
    * Remove the specified resource from storage.
