@@ -30,7 +30,7 @@ class TestMigrationset extends Migration
         {
             $table->foreign('type_id')->references('id')->on('course_types');
         });
-        Schema::table('course_couter', function($table)
+        Schema::table('course_couters', function($table)
         {
             $table->foreign('course_id')->references('id')->on('courses');
         });
