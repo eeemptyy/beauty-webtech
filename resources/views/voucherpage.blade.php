@@ -11,7 +11,7 @@
     .mySlides {display:none;}
     </style>
   </head>
-  <body style="font-family:Kanit;">
+  <body style="font-family:Kanit; background: url(img/bg.png); background-attachment:fixed;">
 
     <section class="hero is-danger is-medium">
       <!-- Hero header: will stick at the top -->
@@ -108,10 +108,10 @@
 
 <div class="column">
 <br><br><br><br><br><br>
- <div class="tag is-danger is-large"> {{$data[$j]->name}}   ใช้  {{$data[$j]->price}} Point <img src="img/coins.png" onclick="descw(this)" style="width:13%" ></div>
+ <div class="tag is-danger is-large"> Voucher : {{$data[$j]->name}}   ใช้  {{$data[$j]->price}} Point </div>
 
  <br><br>
- <div class="">
+ <div class="desc">
  <!-- <img src="https://lh6.googleusercontent.com/-wbz6cuxM6Tw/T9P30GA6azI/AAAAAAAACbM/O1eECuA2J7o/s24/minus.png" onclick="descc(this)" style="float:right; margin: 3px 10px 5px 5px;" > -->
  <p>{{$data[$j]->detail}}</p>
  </div>
@@ -157,6 +157,12 @@
   <div class="column"><img class="" src="img/8.png" style="width:80%"></div>
   <div class="column"><img class="" src="img/9.png" style="width:80%"></div>
 </div> -->
+
+<style type="text/css">
+.desc {  border-radius: 25px;
+    border: 2px solid red; background: 	#fff;
+    padding: 20px;  margin-top:5px; font-size:18px; }
+</style>
 <script>
 var myIndex = 0;
 carousel();
