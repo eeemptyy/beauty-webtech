@@ -25,3 +25,14 @@ Route::get('voucher', function () {
 });
 
 Route::get('/{$name}', 'UserController@index');
+// Route::get('service', function () {
+//     return view('servicepage');
+// });
+// Route::get('/', function () {
+//     return view('homepage');
+// });
+Route::get('voucher', function () {
+    return view('voucherpage');
+});
+Route::get('service',"CourseController@create");
+Route::get('/',"CourseController@index");

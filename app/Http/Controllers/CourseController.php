@@ -1,7 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Foundation\Bus\DispatchesJobs;
+use App\Http\Controllers\Controller;
+use Illuminate\Database\Query\Builder;
+// use Illuminate\Routing\Controller as Controller;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Support\Facades\DB;
 use App\Course;
 use Illuminate\Http\Request;
 
@@ -30,6 +36,9 @@ class CourseController extends Controller
         // ];
         return view('course');
 
+        // DB::table('users')->select('users.id','users.name','profiles.photo')->join('profiles','profiles.id','=','users.id')->where(['something' => 'something', 'otherThing' => 'otherThing'])->get();
+       $data = DB::table('courses')->join('promotions','promotions.course_id','=','courses.id')->get();
+       return view('homepage',['data' => $data]);
     }
 
     /**
@@ -54,6 +63,9 @@ class CourseController extends Controller
         //
         // echo "create";
         // return view('course');
+      $data = DB::table('courses')->get();
+      return view('servicepage',['data' => $data]);
+
     }
 
     /**
@@ -90,7 +102,10 @@ class CourseController extends Controller
     public function show(Course $course)
     {
         //
-    }
+        //
+        // $data = DB::table('courses')->get();
+        // return view('test',['data' => $data]);
+       }
 
     /**
      * Show the form for editing the specified resource.

@@ -78,26 +78,54 @@
 
 
 <!-- -------------------------------------------------------------------- -->
+<?php $types=array("ทรีทเมนท์ผิวหน้า", "ทรีทเมนท์ผิวกาย", "กระชับสัดส่วน","เลเซอร์","ปรับรูปหน้า");
+$pic=array("img/10.png","img/11.png","img/12.png","img/13.png","img/14.png")
 
-<div class="columns is-multiline is-mobile" name="treatment" id="vue-detail" v-for="d in pic">
+ ?>
+ @for($j = 0; $j < 5; $j++)
+ <div class="columns is-multiline is-mobile" name="treatment">
+<!-- <div class="columns is-multiline is-mobile"  id="vue-detail" v-for="(index,d) in pic"> -->
 <!-- <div class="column is-one-quarter"v-for="d in pic"> -->
+
 <div class="column is-one-quarter" >
-  <h1>Treatment</h1>
+
+  <h1>{{$types[$j]}}</h1>
  <!-- <img style="width:70%" src= 'img/10.png' > -->
-   <img class="mySlides"style="width:80%" :src= "d.path" >
+   <img style="width:80%" src= "{{$pic[$j]}}" >
     <!-- <img style="width:80%" :src= "d.path" > -->
+
 </div>
-  <div class="column">
-   <div  v-for="n in 5">    <!--loop in database แบ่งตามประเภท v-for='data in allcourse database' v-if(type=ทริตเม้น)-->
-    <div class="click"> Division @{{n}} <img src="https://lh6.googleusercontent.com/-KHuovUcXCB0/T9P30NeOhyI/AAAAAAAACbI/Yt8JvRP8s6g/s24/plus.png" onclick="descw(this)" ></div>
+
+<div class="column">
+@for ($i = 0; $i < count($data); $i++)
+
+@if($data[$i]->category==$types[$j])
+@if($data[$i]->type_id=='1')
+  <div class="click"> {{$data[$i]->name}}   ราคา : {{$data[$i]->price}} บาท  <img src="https://lh6.googleusercontent.com/-KHuovUcXCB0/T9P30NeOhyI/AAAAAAAACbI/Yt8JvRP8s6g/s24/plus.png" onclick="descw(this)" ></div>
+  <div class="desc">
+  <img src="https://lh6.googleusercontent.com/-wbz6cuxM6Tw/T9P30GA6azI/AAAAAAAACbM/O1eECuA2J7o/s24/minus.png" onclick="descc(this)" style="float:right; margin: 3px 10px 5px 5px;" >
+  <p>{{$data[$i]->detail}}</p>
+  </div>
+  @endif
+  @endif
+  @endfor
+
+</div>
+
+
+
+  <!-- <div class="column"> -->
+   <!-- <div  v-for="n in 5">    loop in database แบ่งตามประเภท v-for='data in allcourse database' v-if(type=ทริตเม้น)--> -->
+    <!-- <div class="click"> Division @{{n}} <img src="https://lh6.googleusercontent.com/-KHuovUcXCB0/T9P30NeOhyI/AAAAAAAACbI/Yt8JvRP8s6g/s24/plus.png" onclick="descw(this)" ></div>
     <div class="desc">
     <img src="https://lh6.googleusercontent.com/-wbz6cuxM6Tw/T9P30GA6azI/AAAAAAAACbM/O1eECuA2J7o/s24/minus.png" onclick="descc(this)" style="float:right; margin: 3px 10px 5px 5px;" >
     <p>Description @{{num}}</p>
     </div>
-    </div>
-  </div>
+    </div> -->
+  <!-- </div> -->
 <!-- </div> -->
 </div>
+@endfor
 
 <!-- -------------------------------------------------------------------- -->
 
