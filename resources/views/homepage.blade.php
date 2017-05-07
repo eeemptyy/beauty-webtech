@@ -115,7 +115,7 @@
 <div class="w3-content w3-section" style="max-width:500px" id="vue-app">
   @foreach($data as $a)
 
-  <img class="mySlides"style="width:100%" src='{{$a->pic_path}}' alt='Test test'>
+  <a href='service'> <img class="mySlides"style="width:100%" src='{{$a->pic_path}}' alt='Test test' > </a>
 
   @endforeach
   <!-- <img class="mySlides"style="width:100%" v-for="d in pic" :src= "d.path" > -->
@@ -125,23 +125,25 @@
 </div>
 
 <br><br>
-<div class="columns">
+<div class="columns column is-offset-1">
 <span class="tag is-danger is-medium is-child title is-4 is-centered ">บริการ</span>
 <!-- <span class="tag is-danger is-medium is-child">บริการทั้งหมด</span> -->
 <a class="button is-danger is-outlined column is-2 is-offset-8" href="service">บริการทั้งหมด</a></span>
 </div>
 <br><br>
+
+
 <div class="columns is-gapless has-text-centered"  >
-  <div class="column "><img class=""src= "img/1.png" style="width:80%"></div>
-  <div class="column"><img class="" src="img/2.png" style="width:80%"></div>
-  <div class="column"><img class="" src="img/3.png" style="width:80%"></div>
-  <div class="column"><img class="" src="img/4.png" style="width:80%"></div>
-  <div class="column"><img class="" src="img/5.png" style="width:80%"></div>
+  <div class="column "><a href="service/#ทรีทเมนท์ผิวหน้า"><img class=""src= "img/1.png" style="width:80%"></div></a>
+  <div class="column"><a href="service/#ทรีทเมนท์ผิวกาย"><img class="" src="img/2.png" style="width:80%"></div></a>
+  <div class="column"><a href="service/#กระชับสัดส่วน"><img class="" src="img/3.png" style="width:80%"></div></a>
+  <div class="column"><a href="service/#เลเซอร์"><img class="" src="img/4.png" style="width:80%"></div></a>
+  <div class="column"><a href="service/#ปรับรูปหน้า"><img class="" src="img/5.png" style="width:80%"></div></a>
 </div>
 
 
 
-<div class="columns is-gapless has-text-centered">
+<div class="columns is-gapless has-text-centered ">
   <div class="column ">ทรีทเมนท์ผิวหน้า</div>
   <div class="column">ทรีทเมนท์ผิวกาย</div>
   <div class="column">กระชับสัดส่วน</div>
@@ -150,9 +152,9 @@
 </div>
 
 <br><br><br><br>
-
+<div class="columns column is-offset-1">
 <span class="tag is-danger is-medium is-child title is-4 is-centered ">บทความที่น่าสนใจ</span><br><br>
-
+</div>
 <div class="columns is-gapless has-text-centered">
   <div class="column "><img class="" src="img/6.png" style="width:80%"></div>
   <div class="column"><img class="" src="img/7.png" style="width:80%"></div>

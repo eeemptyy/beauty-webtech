@@ -18,6 +18,21 @@ class CourseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     public function select_voucher(){
+       $data = DB::table('courses')->get();
+       return view('voucherpage',['data' => $data]);
+
+     }
+     public function select_promotion(){
+       $data = DB::table('courses')->join('promotions','promotions.course_id','=','courses.id')->get();
+       return view('homepage',['data' => $data]);
+     }
+     public function select_course(){
+       $data_promotion = DB::table('courses')->join('promotions','promotions.course_id','=','courses.id')->get();
+       $data = DB::table('courses')->get();
+
+       return view('servicepage',['data' => $data,'data_promotion' => $data_promotion]);
+     }
     public function index()
     {
         //'name', 'detail', 'price', 'bonus_point',
@@ -37,8 +52,7 @@ class CourseController extends Controller
         return view('course');
 
         // DB::table('users')->select('users.id','users.name','profiles.photo')->join('profiles','profiles.id','=','users.id')->where(['something' => 'something', 'otherThing' => 'otherThing'])->get();
-       $data = DB::table('courses')->join('promotions','promotions.course_id','=','courses.id')->get();
-       return view('homepage',['data' => $data]);
+
     }
 
     /**

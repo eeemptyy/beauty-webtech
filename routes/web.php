@@ -34,5 +34,7 @@ Route::get('/{$name}', 'UserController@index');
 Route::get('voucher', function () {
     return view('voucherpage');
 });
-Route::get('service',"CourseController@create");
-Route::get('/',"CourseController@index");
+
+Route::get('voucher',"CourseController@select_voucher");
+Route::get('service',"CourseController@select_course");
+Route::get('/',"CourseController@select_promotion");
