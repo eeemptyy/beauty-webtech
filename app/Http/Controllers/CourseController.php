@@ -35,6 +35,22 @@ class CourseController extends Controller
      }
     public function index()
     {
+        //'name', 'detail', 'price', 'bonus_point',
+        //  'status', 'type_id', 'category', 'pic_path'
+        // $c = [
+        //   '0' => [
+        //   'name' => 'T course-name',
+        //   'detail' => 'T course-detail',
+        //   'price' => '1000',
+        //   'bonus_point' => '1000',
+        //   'status' => 'active',
+        //   'type_id' => '123',
+        //   'category' => 'face type',
+        //   'pic_path' => 'pic...',
+        //   ]
+        // ];
+        return view('course');
+
         // DB::table('users')->select('users.id','users.name','profiles.photo')->join('profiles','profiles.id','=','users.id')->where(['something' => 'something', 'otherThing' => 'otherThing'])->get();
 
     }
@@ -44,9 +60,25 @@ class CourseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-
+      $var = $request->all();
+      Course::create([
+          'name' => $var['name'],
+          'detail' => $var['detail'],
+          'price' => $var['price'],
+          'bonus_point' => $var['bonus_point'],
+          'status' => $var['status'],
+          'type_id' => $var['type_id'],
+          'category' => $var['category'],
+          'pic_path' => $var['pic_path']
+      ]);
+      return "Create Success!";
+        //
+        // echo "create";
+        // return view('course');
+      $data = DB::table('courses')->get();
+      return view('servicepage',['data' => $data]);
 
     }
 
@@ -59,6 +91,20 @@ class CourseController extends Controller
     public function store(Request $request)
     {
         //
+        // Course::create($request->all());
+        // $Name = $request->input('')
+        // CourseType::create($request->)
+        $var = $request->all();
+        return Course::create([
+            'name' => $var['name'],
+            'detail' => $var['detail'],
+            'price' => $var['price'],
+            'bonus_point' => $var['bonus_point'],
+            'status' => $var['status'],
+            'type_id' => $var['type_id'],
+            'category' => $var['category'],
+            'pic_path' => $var['pic_path']
+        ]);
     }
 
     /**
