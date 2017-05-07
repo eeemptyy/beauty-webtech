@@ -31,10 +31,11 @@ Route::get('/{$name}', 'UserController@index');
 // Route::get('/', function () {
 //     return view('homepage');
 // });
-Route::get('voucher', function () {
-    return view('voucherpage');
-});
 
 Route::get('voucher',"CourseController@select_voucher");
 Route::get('service',"CourseController@select_course");
 Route::get('/',"CourseController@select_promotion");
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

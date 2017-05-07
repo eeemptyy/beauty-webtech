@@ -15,7 +15,6 @@ class UserController extends Controller
    *
    * @return \Illuminate\Http\Response
    */
-  
   public function index($name)
   {
     $user = DB::table('users')->where('firstname', $name)->first();
