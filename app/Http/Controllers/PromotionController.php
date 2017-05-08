@@ -19,7 +19,7 @@ class PromotionController extends Controller
         // $course_id = Items::where('status', true)->pluck('name', 'id');
         // return view('promotion', );
         $courses = Course::all();
-        return View('promotion' ,['courses' => $courses ]);
+        return View('createService' ,['courses' => $courses ]);
     }
 
     /**
