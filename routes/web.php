@@ -56,3 +56,9 @@ Route::post('/send', 'EmailController@send');
 Route::get('/mail-config',  function() {
     return dd(config('mail'));
 });
+
+Route::post('change', function () {
+	return view('changepass');
+});
+
+Route::post('change/validate', 'ChangePasswordController@store');
