@@ -31,6 +31,7 @@
   </head>
   <body style="font-family:Kanit;">
     <div class="container">
+      <h3 style="text-align:center; margin-top:30px;">Profile</h3>
       <div class='column is-three-quarters' style="border:1px solid black; margin:auto; margin-top:20px; margin-bottom:20px; background-color:white;">
 
       <h3 style="text-align:center;">Firstname : {{Auth::user()->firstname}}</h3>
@@ -39,7 +40,8 @@
       <h3 style="text-align:center;">Point : {{Auth::user()->point}}</h3>
 
       </div>
-          <table class='table' style='width:70%; margin:auto;'>
+    <h3 style="text-align:center; margin-top:30px;">History</h3>
+          <table class='table' style='width:70%; margin:auto;margin-bottom:17%;'>
             <thead>
                 <tr>
                     <th>Course name</th>

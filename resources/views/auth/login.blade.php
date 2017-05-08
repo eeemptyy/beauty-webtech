@@ -3,14 +3,14 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-8 col-md-offset-2" style="margin-bottom:190px;margin-top:100px;">
             <div class="panel panel-default">
                 <div class="panel-heading">Login</div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}" style="margin-top:30px;">
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
                             <div class="col-md-6">

@@ -15,7 +15,7 @@
 
       <!-- Hero content: will be in the middle -->
       @section('pic')
-            <div class="column "><img class="column is-2 is-offset-1"src= "img/gift-vouchers.jpg" style="width:80%"></div>
+            <div class="column "><img class="column is-2 is-offset-1"src= "img/gift-vouchers.jpg" style="width:30%"></div>
   @endsection
 
   <br><br><br><br>
@@ -32,7 +32,7 @@
 @foreach($data as $a)
 @if($a->type_id=='2')
 
-<img class="mySlides w3-animate-left"style="width:100%" src='img/{{$a->pic_path}}' alt='Test test'>
+<img class="mySlides w3-animate-left"style="width:30%" src='{{$a->pic_path}}' alt='Test test'>
 @endif
 @endforeach
 </div>
@@ -46,7 +46,7 @@
 <div class="column is-half has-text-centered" >
 
 <br><br><br><br><br><br>
-  <img style="width:80%" src= "img/{{$data[$j]->pic_path}}" >
+  <img style="width:80%" src= "{{$data[$j]->pic_path}}" >
 
 
 </div>

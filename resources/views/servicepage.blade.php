@@ -25,16 +25,16 @@ $pic=array("img/10.png","img/11.png","img/12.png","img/13.png","img/14.png")
 
 <!-- <a class="button is-danger is-focused"  href="#ปรับรูปหน้า">ทรีทเมนท์ผิวหน้า</a> -->
 <div class="columns is-mobile">
-  <div class="column is-6 is-offset-4 is-medium is-large">
-    <a class="button is-danger is-focused "  href="#ทรีทเมนท์ผิวหน้า">ทรีทเมนท์ผิวหน้า</a>
+  <div class="column is-5 is-offset-4 is-medium is-large">
+    <a class="button is-danger is-focused  "  href="#ทรีทเมนท์ผิวหน้า"  style="height:30px;font-size:110%;">ทรีทเมนท์ผิวหน้า</a>
 
-    <a class="button is-danger is-focused"  href="#ทรีทเมนท์ผิวกาย">ทรีทเมนท์ผิวกาย</a>
+    <a class="button is-danger is-focused"  href="#ทรีทเมนท์ผิวกาย"  style="height:30px;font-size:110%;">ทรีทเมนท์ผิวกาย</a>
 
-    <a class="button is-danger is-focused"  href="#กระชับสัดส่วน">กระชับสัดส่วน</a>
+    <a class="button is-danger is-focused"  href="#กระชับสัดส่วน"  style="height:30px;font-size:110%;">กระชับสัดส่วน</a>
 
-    <a class="button is-danger is-focused"  href="#เลเซอร์">เลเซอร์</a>
+    <a class="button is-danger is-focused"  href="#เลเซอร์"  style="height:30px;font-size:110%;">เลเซอร์</a>
 
-    <a class="button is-danger is-focused"  href="#ปรับรูปหน้า">ปรับรูปหน้า</a>
+    <a class="button is-danger is-focused"  href="#ปรับรูปหน้า"  style="height:30px;font-size:110%;">ปรับรูปหน้า</a>
   </div>
 </div>
 <br><br><br>
