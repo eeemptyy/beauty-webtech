@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Query\Builder;
+use Auth;
 
 class UserController extends Controller
 {
@@ -13,31 +16,18 @@ class UserController extends Controller
    *
    * @return \Illuminate\Http\Response
    */
+
+   public function __construct()
+   {
+       $this->middleware('auth');
+   }
+
   public function index()
   {
-      //
-      return view('get-service');
-  }
-
-  /**
-   * Show the form for creating a new resource.
-   *
-   * @return \Illuminate\Http\Response
-   */
-  public function create()
-  {
-      //
-  }
-
-  /**
-   * Store a newly created resource in storage.
-   *
-   * @param  \Illuminate\Http\Request  $request
-   * @return \Illuminate\Http\Response
-   */
-  public function store(Request $request)
-  {
-      //
+    $history = DB::table('histories')->join('courses','courses.id','=','histories.course_id')->where('user_id',Auth::user()->id)->get();
+    return view('user-profile',[
+      'history' => $history
+    ]);
   }
 
   /**
