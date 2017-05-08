@@ -10,66 +10,59 @@
   </head>
 
 <body body style="font-family:Kanit; background: url(img/bg.png); background-attachment:fixed;">
-  <section class="hero is-danger is-medium" style="font-family:Fredoka One" >
-  <!-- Hero header: will stick at the top -->
-  <div class="hero-head">
-    <header class="nav">
-      <div class="container">
-        <div class="nav-left">
-          <a class="nav-item">
-            <!-- <img src="images/bulma-type-white.png" alt="Logo"> -->
-          </a>
-        </div>
-        <span class="nav-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </span>
-        <div class="nav-right nav-menu">
-          <a class="nav-item is-active">
-            Home
-          </a>
-          <a class="nav-item">
-            Examples
-          </a>
-          <a class="nav-item">
-            Documentation
-          </a>
-          <span class="nav-item">
-            <a class="button is-primary is-inverted">
-              <span class="icon">
-                <i class="fa fa-github"></i>
-              </span>
-              <span>Download</span>
+  <section class="hero is-danger is-medium" style="font-family:Fredoka One; background-color:	#F08080;">
+    <!-- Hero header: will stick at the top -->
+    <div class="hero-head">
+      <header class="nav">
+        <div class="container">
+          <div class="nav-left">
+            <a class="nav-item">
+              KU Beauty Clinic
+              <!-- <img src="img/logo.png" alt="Logo" > -->
             </a>
+          </div>
+          <span class="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
           </span>
+          <div class="nav-right nav-menu">
+            <a class="nav-item is-active">
+              Login
+            </a>
+            <a class="nav-item">
+              Register
+            </a>
+            <span class="nav-item">
+
+            </span>
+          </div>
         </div>
-      </div>
-    </header>
-  </div>
-
-  <!-- Hero content: will be in the middle -->
-  <!-- <div class="hero-body"> -->
-  <br>
-    <div class="container has-text-centered"   style="font-size:70px">
-        Beauty Clinic
+      </header>
     </div>
-    <br>
-  <!-- </div> -->
 
-  <!-- Hero footer: will stick at the bottom -->
-  <div class="hero-foot"  >
-    <nav class="tabs" >
-      <div class="container" style="font-size:20px;">
-        <ul >
-          <li ><a  href="/">Home</a></li>
-          <li class="is-active"><a>Service</a></li>
-          <li ><a  href="voucher">Voucher</a></li>
-        </ul>
+    <!-- Hero content: will be in the middle -->
+    <br>
+      <div class="container has-text-centered"   style="font-size:70px">
+          Beauty Clinic
       </div>
-    </nav>
-  </div>
-</section>
+      <br>
+
+    <!-- Hero footer: will stick at the bottom -->
+    <div class="hero-foot">
+      <nav class="tabs is-boxed is-fullwidth">
+        <div class="container" style="font-size:20px;">
+          <ul>
+            <ul >
+              <li ><a href="/">Home</a></li>
+              <li class="is-active"><a>Service</a></li>
+              <li ><a  href="voucher">Voucher</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </section>
+
 <br><br><br><br>
 
 
