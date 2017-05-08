@@ -2,6 +2,7 @@
 <html style="background: url( );">
 <title>Home Page</title>
 <meta charset="utf-8">
+
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -11,6 +12,7 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link href='//fonts.googleapis.com/css?family=Kanit' rel='stylesheet'>
+<link href='//fonts.googleapis.com/css?family=Fredoka One' rel='stylesheet'>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" media="screen" href="css/bulma.css">
@@ -46,14 +48,17 @@
   </div>
  -->
 
- <section class="hero is-danger is-medium">
+ <!-- <section class="hero is-danger is-medium" style="font-family:Fredoka One"> -->
+
+ <section class="hero is-danger is-medium" style="font-family:Fredoka One; background-color:	#F08080; ">
    <!-- Hero header: will stick at the top -->
    <div class="hero-head">
      <header class="nav">
        <div class="container">
          <div class="nav-left">
            <a class="nav-item">
-             <!-- <img src="images/bulma-type-white.png" alt="Logo"> -->
+             KU Beauty Clinic
+             <!-- <img src="img/logo.png" alt="Logo" > -->
            </a>
          </div>
          <span class="nav-toggle">
@@ -63,21 +68,13 @@
          </span>
          <div class="nav-right nav-menu">
            <a class="nav-item is-active">
-             Home
+             Login
            </a>
            <a class="nav-item">
-             Examples
-           </a>
-           <a class="nav-item">
-             Documentation
+             Register
            </a>
            <span class="nav-item">
-             <a class="button is-primary is-inverted">
-               <span class="icon">
-                 <i class="fa fa-github"></i>
-               </span>
-               <span>Download</span>
-             </a>
+
            </span>
          </div>
        </div>
@@ -85,40 +82,37 @@
    </div>
 
    <!-- Hero content: will be in the middle -->
-   <!-- <div class="hero-body"> -->
-     <div class="container has-text-centered">
-       <h1 class="title">
+   <br>
+     <div class="container has-text-centered"   style="font-size:70px">
          Beauty Clinic
-       </h1>
-       <h2 class="subtitle">
-         คลีนิคเสริมความงาม
-       </h2>
      </div>
-   <!-- </div> -->
+     <br>
 
    <!-- Hero footer: will stick at the bottom -->
    <div class="hero-foot">
-     <nav class="tabs">
-       <div class="container">
+     <nav class="tabs is-boxed is-fullwidth">
+       <div class="container" style="font-size:20px;">
          <ul>
-           <li class="is-active"><a>Home</a></li>
-           <li><a href="service">Service</a></li>
-           <li><a  href="voucher">Voucher</a></li>
+           <ul >
+             <li class="is-active"><a>Home</a></li>
+             <li><a  href="service">Service</a></li>
+             <li ><a  href="voucher">Voucher</a></li>
          </ul>
        </div>
      </nav>
    </div>
  </section>
+
  <br><br>
 <!-- <h2 class="title is-1 is-centered has-text-centered">Promotions</h2> -->
 <div class = "is-centered has-text-centered">
   <img src="img/pro.png">
 </div>
 <br><br>
-<div class="w3-content w3-section" style="max-width:500px" id="vue-app">
+<div class="w3-content w3-section "  id="vue-app">
   @foreach($data as $a)
 
-  <a href='service'> <img class="mySlides"style="width:100%" src='{{$a->pic_path}}' alt='Test test' > </a>
+  <a href='service'> <img class="mySlides w3-animate-left"style="width:100%" src='img/{{$a->pic_path}}' alt='Test test' > </a>
 
   @endforeach
   <!-- <img class="mySlides"style="width:100%" v-for="d in pic" :src= "d.path" > -->
