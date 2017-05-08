@@ -8,6 +8,8 @@ use App\Course;
 use App\User;
 use App\CouresCouter;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use DB;
 use DateTime;
 
 class HistoryController extends Controller
@@ -17,16 +19,25 @@ class HistoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index1()
     {
         //
-        $types = CourseType::all();
+        // $types = CourseType::all();
+
         $services = Course::all();
         $users = User::all();
-        return view('get-service', ['types' => $types, 'services' => $services, 'users' => $users]);
-        // return view('get-service');
+        return view('get-service', [ 'services' => $services, 'users' => $users]);
     }
 
+    public function index2()
+    {
+        //
+        // $types = CourseType::all();
+
+        $services = Course::all();
+        $users = User::all();
+        return view('get-voucher', [ 'services' => $services, 'users' => $users]);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -43,27 +54,34 @@ class HistoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+
+     protected function validator(array $data)
+     {
+         return Validator::make($data, [
+             'firstname' => 'required|string|max:255',
+             'lastname' => 'required|string|max:255',
+             'email' => 'required|string|email|max:255|unique:users',
+             'password' => 'required|string|min:6|confirmed',
+         ]);
+     }
+
+    public function store1(Request $request)
     {
+        //
         //'user_id', 'course_id', 'date_purchase'
-        $types = CourseType::all();
+        $var = $request->all();
+        $this->updatePoint($var);
+
+        // $types = CourseType::all();
         $services = Course::all();
         $users = User::all();
 
-
-        $var = $request->all();
         History::create([
             'user_id' => $var['user_id'],
             'course_id' => $var['course_id'],
             'date_purchase' => new DateTime(),
         ]);
-        // 'course_id', 'counter', 'date'
-        // CouresCouter::create([
-        //   'course_id' => $var['course_id'],
-        //
-        //
-        // ]);
-        return view('get-service', ['types' => $types, 'services' => $services, 'users' => $users]);
+        return view('get-service', [ 'services' => $services, 'users' => $users]);
     }
 
     /**
@@ -72,6 +90,55 @@ class HistoryController extends Controller
      * @param  \App\History  $history
      * @return \Illuminate\Http\Response
      */
+
+    public function store2(Request $request)
+    {
+        //'user_id', 'course_id', 'date_purchase'
+        $var = $request->all();
+        $this->updatePoint($var);
+
+        // $types = CourseType::all();
+        $services = Course::all();
+        $users = User::all();
+
+        History::create([
+            'user_id' => $var['user_id'],
+            'course_id' => $var['course_id'],
+            'date_purchase' => new DateTime(),
+        ]);
+        // 'course_id', 'counter', 'date'
+        // CouresCouter::create([
+        //   'course_id' => $var['course_id'],
+        // ]);
+
+        return view('get-voucher', [ 'services' => $services, 'users' => $users]);
+    }
+
+    public function updatePoint($data)
+    {
+
+      $user = DB::table('users')->where('id', $data['user_id'])->first();
+      $service = DB::table('courses')->where('id',$data['course_id'])->first();
+      $oldPoint = $user->point;
+
+      // 1 = coures , 2 = vorcher
+
+      if ($service->type_id == 1){
+        DB::table('users')
+            ->where('id', $data['user_id'])
+            ->update(['point' => $oldPoint + $service->bonus_point]);
+      }
+      elseif ($service->type_id == 2) {
+        DB::table('users')
+            ->where('id', $data['user_id'])
+            ->update(['point' => $oldPoint - $service->price]);
+      }
+
+      // DB::table('course_couter')
+      //     ->where('course_id', $data['user_id'])
+      //     ->update(['point' => $oldPoint + $service->bonus_point]);
+    }
+
     public function show(History $history)
     {
         //
@@ -106,8 +173,8 @@ class HistoryController extends Controller
      * @param  \App\History  $history
      * @return \Illuminate\Http\Response
      */
-    public function destroy(History $history)
-    {
-        //
-    }
+    // public function destroy(History $history)
+    // {
+    //     //
+    // }
 }

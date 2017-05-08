@@ -68,73 +68,67 @@
           <div class="title m-b-md">
               Service
           </div>
-
-
             <div class="form-group">
-              <form class="form-horizontal" action="/course" method = "post" >
+              <form class="form-horizontal" action="/course" method = "post">
                 {{ csrf_field() }}
                 <div class="tile ">
                   <div class="tile is-parent is-vertical is-flex-widescreen">
                     <article class="tile is-child notification is-warning">
 
                       <label class="label">Service Name</label>
-                          <input class="input is-medium" type="text" name="name" placeholder="name">
+                          <input class="input is-medium" type="text" name="name" placeholder="name" required>
 
-                      <div class="form-group">
-                          <label class="label">Service Detail</label>
+                          <div class="tile is-parent is-horizontal is-flex-widescreen">
 
-                            <div class="col-md-10">
-                              <textarea name="detail" rows="8" cols="80"></textarea>
-                            </div>
-                          <!-- <input class="input is-medium" type="text" name="detail" placeholder="detail"> -->
-
-                      </div>
-                      <label class="label">Service Price</label>
-                          <input class="input is-medium" type="number" name="price" placeholder="price">
-
-                      <label class="label">Bonus Point</label>
-                          <input class="input is-medium" type="number" name="bonus_point" placeholder="point">
-
-                      <div class="tile is-parent is-horizontal is-flex-widescreen">
-
-                          <div class="column">
-                            <label class="label">Status</label>
-                              <span class="select">
-                                <select name="status">
-                                  <option value="1">active</option>
-                                  <option value="0">unactive</option>
-                                </select>
-                              </span>
-                          </div>
-
-                          <div class="column">
-                            <label class="label">Service Type</label>
-                                <span class="select">
-                                  <select name="type_id">
-                                    <option value="1">course</option>
-                                      <option value="2">vorcher</option>
-                                    </select>
-                                  </span>
-                            </div>
-                          <div class="column">
-                              <label class="label">Category</label>
+                              <div class="column">
+                                <label class="label">Status</label>
                                   <span class="select">
-                                    <select name="category">
-                                      <option>ทรีทเมนท์ผิวหน้า</option>
-                                      <option>ทรีทเมนท์ผิวกาย</option>
-                                      <option>กระชับสัดส่วน</option>
-                                      <option>เลเซอร์</option>
-                                      <option>ปรับรูปหน้า</option>
+                                    <select name="status">
+                                      <option value="1">active</option>
+                                      <option value="0">unactive</option>
                                     </select>
                                   </span>
+                              </div>
+                              <div class="column">
+                                <label class="label">Service Type</label>
+                                    <span class="select">
+                                      <select name="type_id">
+                                        <option value="1">course</option>
+                                          <option value="2">vorcher</option>
+                                        </select>
+                                      </span>
+                                </div>
+                              <div class="column">
+                                  <label class="label">Category</label>
+                                      <span class="select">
+                                        <select name="category">
+                                          <option>ทรีทเมนท์ผิวหน้า</option>
+                                          <option>ทรีทเมนท์ผิวกาย</option>
+                                          <option>กระชับสัดส่วน</option>
+                                          <option>เลเซอร์</option>
+                                          <option>ปรับรูปหน้า</option>
+                                        </select>
+                                      </span>
+                              </div>
                           </div>
-                      </div>
+  <!-- 'nameNull' => $n, 'DetailNull' => $d,'PriceNull' => $p1,'BonusNull' => $b,'PictureNull' => $p -->
+
+                      <label class="label">Service Price</label>
+                          <input class="input is-medium" type="number" name="price" placeholder="price" required>
+                      <label class="label">Bonus Point</label>
+                          <input class="input is-medium" type="number" name="bonus_point" placeholder="point" required>
                       <label class="label">Service Picture</label>
-                        <input class="input is-medium" type="file" name="pic_path" placeholder="picture">
+                        <input class="input is-medium" type="file" name="pic_path" placeholder="picture" required>
+                      <label class="label">Service Detail</label>
+                        <div class="col-md-10">
+                          <textarea name="detail" rows="8" cols="200" required></textarea>
+                        </div>
+                        <!-- <input class="input is-medium" type="text" name="detail" placeholder="detail"> -->
+
                  </article>
                 </div>
             </div>
-                <button class="button is-primary" type="submit">ADD Service</button>
+                <button class="button is-primary" type"submit">ADD Service</button>
                 <!-- <input type="submit" value="ADD Service"> -->
           </form>
         </div>

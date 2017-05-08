@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\CourseCouter;
 use Illuminate\Http\Request;
-use
 
 class CourseCouterController extends Controller
 {
@@ -37,7 +36,6 @@ class CourseCouterController extends Controller
     public function store(Request $request)
     {
         //
-        return view('get-service', ['types' => $types, 'services' => $services, 'users' => $users]);
     }
 
     /**

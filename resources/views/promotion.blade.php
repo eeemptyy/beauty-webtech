@@ -87,7 +87,7 @@
 
                                     <select name="course_id">
                                       @foreach ($courses as $course)
-                                      @if ($course->status == '1')
+                                      @if ($course->status == '1' && $course->type_id == '1')
                                           <option value={{$course->id}}>{{$course->name}}</option>
                                       @endif
                                       @endforeach
@@ -97,13 +97,13 @@
                       </div>
 
                       <label class="label">Discount</label>
-                        <input class="input is-medium" type="number" name="discount" placeholder="discount %">
+                        <input class="input is-medium" type="number" name="discount" placeholder="discount %" required>
 
                       <label class="label">Promotion Start:</label>
-                        <input class="input is-medium" type="date" name="date_start">
+                        <input class="input is-medium" type="date" name="date_start" required>
 
                       <label class="label">Promotion End:</label>
-                          <input class="input is-medium" type="date" name="date_end">
+                          <input class="input is-medium" type="date" name="date_end" required>
 
                  </article>
                 </div>

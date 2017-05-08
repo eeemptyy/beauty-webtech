@@ -10,6 +10,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Support\Facades\DB;
 use App\Course;
 use Illuminate\Http\Request;
+use View;
 
 class CourseController extends Controller
 {
@@ -49,7 +50,7 @@ class CourseController extends Controller
         //   'pic_path' => 'pic...',
         //   ]
         // ];
-        return view('course');
+        return view('createService');
 
         // DB::table('users')->select('users.id','users.name','profiles.photo')->join('profiles','profiles.id','=','users.id')->where(['something' => 'something', 'otherThing' => 'otherThing'])->get();
 
@@ -107,20 +108,87 @@ class CourseController extends Controller
         // $Name = $request->input('')
         // CourseType::create($request->)
         $var = $request->all();
-        Course::create([
-            'name' => $var['name'],
-            'detail' => $var['detail'],
-            'price' => $var['price'],
-            'bonus_point' => $var['bonus_point'],
-            'status' => $var['status'],
-            'type_id' => $var['type_id'],
-            'category' => $var['category'],
-            'pic_path' => $var['pic_path']
-        ]);
-        return view('course');
+
+        $name = $var['name'];
+        $detail = $var['detail'];
+        $price = $var['price'];
+        $bouns = $var['bonus_point'];
+        $pic =$var['pic_path'];
+
+        // if ($name == ''){
+          $n = '';
+          $d = '';
+          $p = '';
+          $b = '';
+          $p1 = '';
+              // if ($name == ''){
+              //     $n = "Name not Null!";
+              //     return view("course",
+              //     ['nameNull' => $n]);
+              // }
+              // if ($detail == '') {
+              //   $d = "Detail not Null!";
+              //   return view("course",[
+              //     'DetailNull' => $d]);
+              // }
+              // if ($price == '') {
+              //   $p1 = "Price not Null!";
+              //   return view("course",[
+              //     'PriceNull' => $p1]);
+              // }
+              // if ($bouns == '') {
+              //   $b = "Bonus Point not Null!";
+              //   return view("course",[
+              //     'BounsNull' => $b]);
+              // }
+              // if ($pic == '') {
+              //   $p = "Picture not Null!";
+              //   return view("course",[
+              //     'PictureNull' => $p]);
+              // }
+
+              // if ($name == ''){
+              //     $n = "Name not Null!";
+              //
+              // // if ($detail == '') {
+              // //   $d = "Detail not Null!";
+              // // }
+              // // if ($price == '') {
+              // //   $p1 = "Price not Null!";
+              // // }
+              // // if ($bouns == '') {
+              // //   $b = "Bonus Point not Null!";
+              // // }
+              // // if ($pic == '') {
+              // //   $p = "Picture not Null!";
+              //   return view("course",[
+              //     'nameNull' => $n
+              //   ]);
+                  // 'nameNull' => $n,'DetailNull' => $d, 'PriceNull' => $p1, 'BounsNull' => $b,'PictureNull' => $p]);
+
+            // }
+            //   else {
+                Course::create([
+                    'name' => $var['name'],
+                    'detail' => $var['detail'],
+                    'price' => $var['price'],
+                    'bonus_point' => $var['bonus_point'],
+                    'status' => $var['status'],
+                    'type_id' => $var['type_id'],
+                    'category' => $var['category'],
+                    'pic_path' => $var['pic_path']
+                ]);
+                return view('createService');
+              // }
+//
+        // return view('course');
     }
 
-    /**
+    public function checkNull($input)
+    {
+
+    }
+    /**}
      * Display the specified resource.
      *
      * @param  \App\Course  $course
