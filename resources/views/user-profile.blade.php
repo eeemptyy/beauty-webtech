@@ -46,31 +46,43 @@
               </thead>
               <tbody>
                   <tr>
-                    <td>{{ Auth::user()->id }}</td>
-                      <td>{{ Auth::user()->firstname }}</td>
-                      <td>{{ Auth::user()->lastname }}</td>
-                      <td>{{ Auth::user()->email }}</td>
-                      <td>{{ Auth::user()->point }}</td>
+                    <td>{{ $id }}</td>
+                      <td>{{ $firstname }}</td>
+                      <td>{{ $lastname }}</td>
+                      <td>{{ $email }}</td>
+                      <td>{{ $point }}</td>
                   </tr>
               </tbody>
           </table>
           <table>
             <thead>
                 <tr>
-                    <th>Course_name</th>
-                    <th>Course_detail</th>
+                    <th>User_id</th>
+                    <th>Course_id</th>
                     <th>Date_purchase</th>
                 </tr>
             </thead>
             <tbody>
                   @foreach ($history as $d)
                   <tr>
-                      <td>{{ $d->name }}</td>
-                      <td>{{ $d->detail }}</td>
+                      <td>{{ $d->user_id }}</td>
+                      <td>{{ $d->course_id }}</td>
                       <td>{{ $d->date_purchase }}</td>
                   </tr>
                   @endforeach
               </tbody>
           </table>
+<<<<<<< HEAD
+          <div class="input">
+          <input type="text" name="input_name" value="firstname">
+          <button type="submit" name="edit">edit</button>
+          <form action="edit" method="post">
+            <input type="hidden" name="_token" value="<?php echo csrf_token() ?>">
+            <input type="hidden" name="id" value="">
+            <input type="text" name="name" value="">
+            <input type="submit" value="สมัครสมาชิก">
+          </form>
+=======
+>>>>>>> master
   </body>
 </html>
