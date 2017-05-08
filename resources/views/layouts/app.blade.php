@@ -109,9 +109,9 @@
                           <?php
                           $user=\App\User::where('email','=',Auth::User()->email)->first();
                           if($user->role_id == '1'){ ?>
-                            <li ><a href="/">All User</a></li>
-                            <li><a  href="service">All Course</a></li>
-                            <li ><a  href="voucher">All Voucher</a></li>
+                            <li ><a href="userTB">All Users</a></li>
+                            <li><a  href="courseTB">All Courses</a></li>
+                            <li ><a  href="voucherTB">All Vouchers</a></li>
                           <?php }
                           if($user->role_id == '2'){ ?>
                             <li ><a href="/">Home</a></li>
