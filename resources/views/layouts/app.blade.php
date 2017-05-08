@@ -87,6 +87,18 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
+                                        <a href="/change" 
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('change-form').submit();">
+                                            Change Password
+                                        </a>
+
+                                        <form id="change-form" action="change" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                            <input type="hidden" name='email' value={{ Auth::user()->email }}>
+                                        </form>
+                                    </li>
+                                    <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

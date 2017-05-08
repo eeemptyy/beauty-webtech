@@ -72,3 +72,9 @@ Route::get('/mail-config',  function() {
 Route::get('userTB', "UserTBController@show");
 Route::get('courseTB', "CourseTBController@show");
 Route::get('voucherTB', "VoucherTBController@show");
+
+Route::post('change', function () {
+	return view('changepass');
+});
+
+Route::post('change/validate', 'ChangePasswordController@store');
