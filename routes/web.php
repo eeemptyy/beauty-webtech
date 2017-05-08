@@ -42,8 +42,33 @@ Route::get('service',"CourseController@select_course");
 
 Route::get('/',"CourseController@select_promotion");
 
+Route::get('createService', 'PromotionController@index');
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('createService', 'PromotionController@index');
+
+Route::any('/sendmail', function()
+{
+	$data = array('name' => 'EMPTY');
+
+	Mail::send('emails.welcome', $data, function($message)
+	{
+		$message->to('jompol.s@outlook.com')
+		->subject('Hi there!  Laravel sent me!');
+	});
+    dd('Mail Send Successfully');
+});
+
+
+Route::post('/send', 'EmailController@send');
+
+Route::get('/mail-config',  function() {
+    return dd(config('mail'));
+});
+
+Route::get('userTB', "UserTBController@show");
+Route::get('courseTB', "CourseTBController@show");
+Route::get('voucherTB', "VoucherTBController@show");

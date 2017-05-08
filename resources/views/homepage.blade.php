@@ -18,30 +18,28 @@
 <div class = "is-centered has-text-centered">
   <img src="img/pro.png">
 </div>
-<br><br>
-<div class="w3-content w3-section "  id="vue-app">
+
+<div class="w3-content w3-section "  id="vue-app" style="padding:20px;">
   @foreach($data as $a)
 
-  <a href='service'> <img class="mySlides w3-animate-left"style="width:100%" src='img/{{$a->pic_path}}' alt='Test test' > </a>
+  <a href='service'> <img class="mySlides w3-animate-left"style="width:30% ; margin:auto;" src='{{$a->pic_path}}' alt='Slide' > </a>
 
   @endforeach
-  <!-- <img class="mySlides"style="width:100%" v-for="d in pic" :src= "d.path" > -->
-  <!-- <img class="mySlides" src="http://www.meuanphun-land.com/images/meuanphun/home-slide-01.jpg" style="width:100%">
-  <img class="mySlides" src="http://www.advancehome.co.th/img/landing_page_mar017.jpg" style="width:100%"> -->
-  <!-- <img class="mySlides" src="1.png" style="width:100%"> -->
+
 </div>
 
-<br><br>
+<div style="background-color:#FFEEDD;padding:20px;">
+<br />
 <div class="columns column is-offset-1">
-<span class="tag is-danger is-medium is-child title is-4 is-centered ">บริการ</span>
+<span class="tag is-danger is-medium is-child title is-3 is-centered ">บริการ</span>
 <!-- <span class="tag is-danger is-medium is-child">บริการทั้งหมด</span> -->
-<a class="button is-danger is-outlined column is-2 is-offset-8" href="service">บริการทั้งหมด</a>
+<a class="button is-danger is-outlined column is-2 is-offset-9" href="service" style="height:40px;font-size:110%;">บริการทั้งหมด</a>
 </div>
-<br><br>
+<br>
 
 
 <div class="columns is-gapless has-text-centered"  >
-  <div class="column "><a href="service/#ทรีทเมนท์ผิวหน้า"><img class=""src= "img/1.png" style="width:80%"></div></a>
+  <div class="column "><a href="service/#ทรีทเมนท์ผิวหน้า"><img class=""src= "img/1.png" style="width:80%;"></div></a>
   <div class="column"><a href="service/#ทรีทเมนท์ผิวกาย"><img class="" src="img/2.png" style="width:80%"></div></a>
   <div class="column"><a href="service/#กระชับสัดส่วน"><img class="" src="img/3.png" style="width:80%"></div></a>
   <div class="column"><a href="service/#เลเซอร์"><img class="" src="img/4.png" style="width:80%"></div></a>
@@ -50,17 +48,20 @@
 
 
 
-<div class="columns is-gapless has-text-centered ">
-  <div class="column ">ทรีทเมนท์ผิวหน้า</div>
-  <div class="column">ทรีทเมนท์ผิวกาย</div>
-  <div class="column">กระชับสัดส่วน</div>
-  <div class="column">เลเซอร์</div>
-  <div class="column">ปรับรูปหน้า</div>
+<div class="columns is-gapless has-text-centered " style="margin-bottom:20px;">
+  <div class="column " style="text-shadow:0.5px 0.5px;">ทรีทเมนท์ผิวหน้า</div>
+  <div class="column" style="text-shadow:0.5px 0.5px;">ทรีทเมนท์ผิวกาย</div>
+  <div class="column" style="text-shadow:0.5px 0.5px;">กระชับสัดส่วน</div>
+  <div class="column" style="text-shadow:0.5px 0.5px;">เลเซอร์</div>
+  <div class="column" style="text-shadow:0.5px 0.5px;">ปรับรูปหน้า</div>
 </div>
 
-<br><br><br><br>
+
+</div>
+
+<br><br>
 <div class="columns column is-offset-1">
-<span class="tag is-danger is-medium is-child title is-4 is-centered ">บทความที่น่าสนใจ</span><br><br>
+<span class="tag is-danger is-medium is-child title is-3 is-centered ">บทความที่น่าสนใจ</span><br><br>
 </div>
 <div class="columns is-gapless has-text-centered">
   <div class="column "><img class="" src="img/6.png" style="width:80%"></div>

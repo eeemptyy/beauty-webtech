@@ -42,15 +42,35 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
+                    <a class="navbar-brand" href="{{ url('/') }}" style="font-size:180%;">
                         {{ config('app.name', 'Beauty Clinic') }}
                     </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
+                    <ul class="nav navbar-nav" style="font-size:130%;margin-left:20px;">
+                      @if(Auth::guest())
+                            <li><a href="/">Home</a></li>
+                            <li><a  href="service">Service</a></li>
+                            <li ><a  href="voucher">Voucher</a></li>
+                            @else
+                            <?php
+                            $user=\App\User::where('email','=',Auth::User()->email)->first();
+                            if($user->role_id == '1'){ ?>
+                              <li ><a href="userTB">All Users</a></li>
+                              <li><a  href="courseTB">All Courses</a></li>
+                              <li ><a  href="voucherTB">All Vouchers</a></li>
+                            <?php }
+                            if($user->role_id == '2'){ ?>
+                              <li ><a href="/">Home</a></li>
+                              <li><a  href="service">Service</a></li>
+                              <li ><a  href="voucher">Voucher</a></li>
+                              <li ><a href="profile">Profile</a></li>
+                            <?php }
+                            ?>
+
+                            @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -84,53 +104,24 @@
                 </div>
             </div>
         </nav>
-        <section class="hero is-danger is-medium" style="font-family:Fredoka One; background-color:	#F08080; margin-top:0px;">
+        <!-- <section class="hero is-danger is-medium" style="font-family:Fredoka One; background-color:	#F08080; margin-top:0px;"> -->
           <!-- Hero header: will stick at the top -->
 
           <!-- Hero content: will be in the middle -->
-          <br>
-            <div class="container has-text-centered"   style="font-size:70px">
-                Beauty Clinic
-                  @yield('pic')
-            </div>
-            <br>
+
 
           <!-- Hero footer: will stick at the bottom -->
-          <div class="hero-foot">
+          <!-- <div class="hero-foot">
             <nav class="tabs is-boxed is-fullwidth">
               <div class="container" style="font-size:20px;">
                 <ul>
                   <ul >
-                    @if(Auth::guest())
-                          <li><a href="/">Home</a></li>
-                          <li><a  href="service">Service</a></li>
-                          <li ><a  href="voucher">Voucher</a></li>
-                          @else
-                          <?php
-                          $user=\App\User::where('email','=',Auth::User()->email)->first();
-                          if($user->role_id == '1'){ ?>
-                            <li ><a href="/">All User</a></li>
-                            <li><a  href="service">All Course</a></li>
-                            <li ><a  href="voucher">All Voucher</a></li>
-                          <?php }
-                          if($user->role_id == '2'){ ?>
-                            <li ><a href="/">Home</a></li>
-                            <li><a  href="service">Service</a></li>
-                            <li ><a  href="voucher">Voucher</a></li>
-                            <li ><a href="profile">Profile</a></li>
-                          <?php }
-                          ?>
 
-                          @endif
-<!--
-                    <li class="is-active"><a>Home</a></li>
-                    <li><a  href="service">Service</a></li>
-                    <li ><a  href="voucher">Voucher</a></li> -->
                 </ul>
               </div>
             </nav>
           </div>
-        </section>
+        </section> -->
 
         @yield('content')
     </div>
