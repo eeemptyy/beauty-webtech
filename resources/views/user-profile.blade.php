@@ -1,3 +1,5 @@
+@extends('layouts.app')
+@section('content')
 <!DOCTYPE html>
 <html>
   <head>
@@ -11,78 +13,52 @@
     <meta charset="utf-8">
     <title></title>
     <style media="screen">
-      table, td ,th{
-        border: 1px solid black;
-      }
-      td,td{
-        padding:10px;
-      }
+
+    table{
+      margin:10px;
+      border:1px black;
+    }
+    td ,th{
+      padding:10px;
+    }
+    tr{
+      padding:10px;
+    }
+    h3{
+      text-align: center;
+    }
     </style>
   </head>
-  <body>
-    <table class='table'>
+  <body style="font-family:Kanit;">
+    <div class="container">
+      <div class='column is-three-quarters' style="border:1px solid black; margin:auto; margin-top:20px; margin-bottom:20px; background-color:white;">
 
+      <h3 style="text-align:center;">Firstname : {{Auth::user()->firstname}}</h3>
+      <h3 style="text-align:center;">Lastname : {{Auth::user()->lastname}}</h3>
+      <h3 style="text-align:center;">Email : {{Auth::user()->email}}</h3>
+      <h3 style="text-align:center;">Point : {{Auth::user()->point}}</h3>
 
-    </table>
-    <style media="screen">
-      table, td ,th{
-        border: 1px solid black;
-      }
-      td,td{
-        padding:10px;
-      }
-    </style>
-  </head>
-  <body>
-      <table class="table">
-              <thead>
-                  <tr>
-                    <th>ID</th>
-                      <th>Firstname</th>
-                      <th>Lastname</th>
-                      <th>Email</th>
-                      <th>Point</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr>
-                    <td>{{ $id }}</td>
-                      <td>{{ $firstname }}</td>
-                      <td>{{ $lastname }}</td>
-                      <td>{{ $email }}</td>
-                      <td>{{ $point }}</td>
-                  </tr>
-              </tbody>
-          </table>
-          <table>
+      </div>
+          <table class='table' style='width:70%; margin:auto;'>
             <thead>
                 <tr>
-                    <th>User_id</th>
-                    <th>Course_id</th>
-                    <th>Date_purchase</th>
+                    <th>Course name</th>
+                    <th>Course detail</th>
+                    <th>Date purchase</th>
                 </tr>
             </thead>
             <tbody>
                   @foreach ($history as $d)
-                  <tr>
-                      <td>{{ $d->user_id }}</td>
-                      <td>{{ $d->course_id }}</td>
+                  <tr class="danger">
+                      <td>{{ $d->name }}</td>
+                      <td>{{ $d->detail }}</td>
                       <td>{{ $d->date_purchase }}</td>
                   </tr>
                   @endforeach
               </tbody>
           </table>
-<<<<<<< HEAD
-          <div class="input">
-          <input type="text" name="input_name" value="firstname">
-          <button type="submit" name="edit">edit</button>
-          <form action="edit" method="post">
-            <input type="hidden" name="_token" value="<?php echo csrf_token() ?>">
-            <input type="hidden" name="id" value="">
-            <input type="text" name="name" value="">
-            <input type="submit" value="สมัครสมาชิก">
-          </form>
-=======
->>>>>>> master
+        </div>
+
   </body>
 </html>
+@endsection

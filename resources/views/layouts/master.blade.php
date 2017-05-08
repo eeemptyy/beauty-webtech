@@ -1,17 +1,79 @@
-@extends('layouts.app')
-@section('content')
 <!DOCTYPE html>
 <html style="background: url( );">
 <title>Home Page</title>
 <meta charset="utf-8">
 
 <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href='//fonts.googleapis.com/css?family=Kanit' rel='stylesheet'>
+<link href='//fonts.googleapis.com/css?family=Fredoka One' rel='stylesheet'>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" media="screen" href="css/bulma.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
+<!-- <link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.1/css/bulma.css"> -->
 <style>
 .mySlides {display:none;}
 </style>
 <body style="font-family:Kanit; background: url(img/bg.png); background-attachment:fixed;">
 
+
+  <!-- <div class="tabs is-centered is-boxed is-medium">
+    <ul>
+      <li class="is-active">
+        <a>
+          <span class="icon is-small"><i class="fa fa-image"></i></span>
+          <span>Home</span>
+        </a>
+      </li>
+      <li>
+        <a>
+          <span class="icon is-small"><i class="fa fa-music"></i></span>
+          <span>Service</span>
+        </a>
+      </li>
+      <li>
+        <a>
+          <span class="icon is-small"><i class="fa fa-film"></i></span>
+          <span>Voucher</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+ -->
+
+ <!-- <section class="hero is-danger is-medium" style="font-family:Fredoka One"> -->
+
+ <section class="hero is-danger is-medium" style="font-family:Fredoka One; background-color:	#F08080; ">
+   <!-- Hero header: will stick at the top -->
+
+   <!-- Hero content: will be in the middle -->
+   <br>
+     <div class="container has-text-centered"   style="font-size:70px">
+         Beauty Clinic
+     </div>
+     <br>
+
+   <!-- Hero footer: will stick at the bottom -->
+   <div class="hero-foot">
+     <nav class="tabs is-boxed is-fullwidth">
+       <div class="container" style="font-size:20px;">
+         <ul>
+           <ul >
+             <li class="is-active"><a>Home</a></li>
+             <li><a  href="service">Service</a></li>
+             <li ><a  href="voucher">Voucher</a></li>
+         </ul>
+       </div>
+     </nav>
+   </div>
+ </section>
 
  <br><br>
 <!-- <h2 class="title is-1 is-centered has-text-centered">Promotions</h2> -->
@@ -19,17 +81,6 @@
   <img src="img/pro.png">
 </div>
 <br><br>
-<div class="w3-content w3-section "  id="vue-app">
-  @foreach($data as $a)
-
-  <a href='service'> <img class="mySlides w3-animate-left"style="width:100%" src='img/{{$a->pic_path}}' alt='Test test' > </a>
-
-  @endforeach
-  <!-- <img class="mySlides"style="width:100%" v-for="d in pic" :src= "d.path" > -->
-  <!-- <img class="mySlides" src="http://www.meuanphun-land.com/images/meuanphun/home-slide-01.jpg" style="width:100%">
-  <img class="mySlides" src="http://www.advancehome.co.th/img/landing_page_mar017.jpg" style="width:100%"> -->
-  <!-- <img class="mySlides" src="1.png" style="width:100%"> -->
-</div>
 
 <br><br>
 <div class="columns column is-offset-1">
@@ -38,6 +89,10 @@
 <a class="button is-danger is-outlined column is-2 is-offset-8" href="service">บริการทั้งหมด</a>
 </div>
 <br><br>
+
+<div class="">
+  @yield('content')
+</div>
 
 
 <div class="columns is-gapless has-text-centered"  >
@@ -149,4 +204,3 @@ function carousel() {
   </script>
 </body>
 </html>
-@endsection

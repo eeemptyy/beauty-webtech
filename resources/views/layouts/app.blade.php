@@ -5,10 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link href='//fonts.googleapis.com/css?family=Kanit' rel='stylesheet'>
+    <link href='//fonts.googleapis.com/css?family=Fredoka One' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" media="screen" href="css/bulma.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Beauty Clinic') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -20,9 +27,9 @@
         ]) !!};
     </script>
 </head>
-<body>
+<body style="font-family:Kanit; background: url(img/bg.png); background-attachment:fixed;">
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+        <nav class="navbar navbar-default navbar-static-top" style="magin-bottom: 0px !important;">
             <div class="container">
                 <div class="navbar-header">
 
@@ -36,7 +43,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        {{ config('app.name', 'Beauty Clinic') }}
                     </a>
                 </div>
 
@@ -77,6 +84,53 @@
                 </div>
             </div>
         </nav>
+        <section class="hero is-danger is-medium" style="font-family:Fredoka One; background-color:	#F08080; margin-top:0px;">
+          <!-- Hero header: will stick at the top -->
+
+          <!-- Hero content: will be in the middle -->
+          <br>
+            <div class="container has-text-centered"   style="font-size:70px">
+                Beauty Clinic
+                  @yield('pic')
+            </div>
+            <br>
+
+          <!-- Hero footer: will stick at the bottom -->
+          <div class="hero-foot">
+            <nav class="tabs is-boxed is-fullwidth">
+              <div class="container" style="font-size:20px;">
+                <ul>
+                  <ul >
+                    @if(Auth::guest())
+                          <li><a href="/">Home</a></li>
+                          <li><a  href="service">Service</a></li>
+                          <li ><a  href="voucher">Voucher</a></li>
+                          @else
+                          <?php
+                          $user=\App\User::where('email','=',Auth::User()->email)->first();
+                          if($user->role_id == '1'){ ?>
+                            <li ><a href="/">All User</a></li>
+                            <li><a  href="service">All Course</a></li>
+                            <li ><a  href="voucher">All Voucher</a></li>
+                          <?php }
+                          if($user->role_id == '2'){ ?>
+                            <li ><a href="/">Home</a></li>
+                            <li><a  href="service">Service</a></li>
+                            <li ><a  href="voucher">Voucher</a></li>
+                            <li ><a href="profile">Profile</a></li>
+                          <?php }
+                          ?>
+
+                          @endif
+<!--
+                    <li class="is-active"><a>Home</a></li>
+                    <li><a  href="service">Service</a></li>
+                    <li ><a  href="voucher">Voucher</a></li> -->
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </section>
 
         @yield('content')
     </div>

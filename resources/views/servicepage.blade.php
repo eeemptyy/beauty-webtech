@@ -1,67 +1,16 @@
+@extends('layouts.app')
+@section('content')
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>service</title>
     <!-- <link rel="stylesheet" media="screen" href="css/bulma.css"> -->
-    <link href='//fonts.googleapis.com/css?family=Kanit' rel='stylesheet'>
-    <link href='//fonts.googleapis.com/css?family=Fredoka One' rel='stylesheet'>
-    <link rel="stylesheet" media="screen" href="css/bulma.css">
+
   </head>
 
-<body body style="font-family:Kanit; background: url(img/bg.png); background-attachment:fixed;">
-  <section class="hero is-danger is-medium" style="font-family:Fredoka One; background-color:	#F08080;">
-    <!-- Hero header: will stick at the top -->
-    <div class="hero-head">
-      <header class="nav">
-        <div class="container">
-          <div class="nav-left">
-            <a class="nav-item">
-              KU Beauty Clinic
-              <!-- <img src="img/logo.png" alt="Logo" > -->
-            </a>
-          </div>
-          <span class="nav-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
-          <div class="nav-right nav-menu">
-            <a class="nav-item is-active">
-              Login
-            </a>
-            <a class="nav-item">
-              Register
-            </a>
-            <span class="nav-item">
 
-            </span>
-          </div>
-        </div>
-      </header>
-    </div>
-
-    <!-- Hero content: will be in the middle -->
-    <br>
-      <div class="container has-text-centered"   style="font-size:70px">
-          Beauty Clinic
-      </div>
-      <br>
-
-    <!-- Hero footer: will stick at the bottom -->
-    <div class="hero-foot">
-      <nav class="tabs is-boxed is-fullwidth">
-        <div class="container" style="font-size:20px;">
-          <ul>
-            <ul >
-              <li ><a href="/">Home</a></li>
-              <li class="is-active"><a>Service</a></li>
-              <li ><a  href="voucher">Voucher</a></li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-  </section>
 
 <br><br><br><br>
 
@@ -222,3 +171,4 @@ var vm = new Vue({
 </script>
   </body>
 </html>
+@endsection

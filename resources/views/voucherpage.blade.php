@@ -1,72 +1,22 @@
+@extends('layouts.app')
+@section('content')
+
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>voucher</title>
-    <link href='//fonts.googleapis.com/css?family=Kanit' rel='stylesheet'>
-    <link rel="stylesheet" media="screen" href="css/bulma.css">
-    <link href='//fonts.googleapis.com/css?family=Fredoka One' rel='stylesheet'>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
     <style>
     .mySlides {display:none;}
     </style>
   </head>
-  <body style="font-family:Kanit; background: url(img/bg.png); background-attachment:fixed;">
-
-    <section class="hero is-danger is-medium" style="font-family:Fredoka One; background-color:	#F08080; ">
-      <!-- Hero header: will stick at the top -->
-      <div class="hero-head">
-        <header class="nav">
-          <div class="container">
-            <div class="nav-left">
-              <a class="nav-item">
-                    KU Beauty Clinic
-                <!-- <img src="img/logo.png" alt="Logo" > -->
-              </a>
-            </div>
-            <span class="nav-toggle">
-              <span></span>
-              <span></span>
-              <span></span>
-            </span>
-            <div class="nav-right nav-menu">
-              <a class="nav-item is-active">
-                Login
-              </a>
-              <a class="nav-item">
-                Register
-              </a>
-              <span class="nav-item">
-
-              </span>
-            </div>
-          </div>
-        </header>
-      </div>
 
       <!-- Hero content: will be in the middle -->
-      <br>
-        <div class="container has-text-centered"   style="font-size:70px">
-            Beauty Clinic
+      @section('pic')
             <div class="column "><img class="column is-2 is-offset-1"src= "img/gift-vouchers.jpg" style="width:80%"></div>
-        </div>
-        <br>
-
-      <!-- Hero footer: will stick at the bottom -->
-      <div class="hero-foot">
-        <nav class="tabs is-boxed is-fullwidth">
-          <div class="container" style="font-size:20px;">
-            <ul>
-              <ul >
-                <li ><a href="/">Home</a></li>
-                <li ><a href="service">Service</a></li>
-                <li class="is-active"><a  >Voucher</a></li>
-            </ul>
-          </div>
-        </nav>
-      </div>
-    </section>
+  @endsection
 
   <br><br><br><br>
 
@@ -167,3 +117,4 @@ function carousel() {
 </script>
   </body>
 </html>
+@endsection
