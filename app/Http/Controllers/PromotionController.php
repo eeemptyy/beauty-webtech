@@ -16,10 +16,8 @@ class PromotionController extends Controller
     public function index()
     {
         //
-        // $course_id = Items::where('status', true)->pluck('name', 'id');
-        // return view('promotion', );
         $courses = Course::all();
-        return View('promotion' ,['courses' => $courses ]);
+        return View('createService' ,['courses' => $courses ]);
     }
 
     /**
@@ -41,15 +39,8 @@ class PromotionController extends Controller
     public function store(Request $request)
     {
         //
-        $var = $request->all();
-        Promotion::create([
-            'course_id' => $var['course_id'],
-            'discount' => $var['discount'],
-            'date_start' => $var['date_start'],
-            'date_end' => $var['date_end'],
-        ]);
         $courses = Course::all();
-        return view('promotion', ['courses' => $courses ]);
+        return view('createService', ['courses' => $courses]);
     }
 
     /**
