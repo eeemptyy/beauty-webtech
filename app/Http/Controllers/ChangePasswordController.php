@@ -2,98 +2,55 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Validator;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class ChangePasswordController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+    
+    /*
+     * Ensure the user is signed in to access this page
      */
-    public function index()
-    {
-        //
+    public function __construct() {
+ 
+        $this->middleware('auth');
+ 
     }
-
+ 
     /**
-     * Show the form for creating a new resource.
+     * Update the password for the user.
      *
-     * @return \Illuminate\Http\Response
+     * @param  Request  $request
+     * @return Response
      */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function update(Request $request)
     {
         $this->validate($request, [
-            'email' => 'required|email',
+            'old' => 'required',
             'password' => 'required|min:6|confirmed',
         ]);
-        // // return dd($request->all());
-        // $data = array(
-        //     'email' => $request->input('email'),
-        //     'password' => $request->input('password')
-        // );
-        // // return $data;
-        // return Validator::make($data, [
-        //     'email' => 'required|email',
-        //     'password' => 'required|min:6|confirmed',
-        // ]);
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+ 
+        $user = User::find(Auth::id());
+        $hashedPassword = $user->password;
+ 
+        if (Hash::check($request->old, $hashedPassword)) {
+            //Change the password
+            $user->fill([
+                'password' => Hash::make($request->password)
+            ])->save();
+ 
+            $request->session()->flash('success', 'Your password has been changed.');
+ 
+            return back();
+        }
+ 
+        $request->session()->flash('failure', 'Your password has not been changed.');
+ 
+        return back();
+ 
+ 
     }
 }
