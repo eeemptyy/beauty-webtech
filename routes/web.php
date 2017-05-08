@@ -27,3 +27,20 @@ Route::get('/',"CourseController@select_promotion");
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::any('/sendmail', function()
+{
+	$data = array('name' => 'EMPTY');
+
+	Mail::send('emails.welcome', $data, function($message)
+	{
+		$message->to('jompol.s@outlook.com')
+		->subject('Hi there!  Laravel sent me!');
+	});
+    dd('Mail Send Successfully');
+});
+
+Route::get('/mail-config',  function() {
+    return dd(config('mail'));
+});
