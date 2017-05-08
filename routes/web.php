@@ -15,6 +15,10 @@ Route::get('service', function () {
     return view('servicepage');
 });
 Route::get('/', function () {
+    return view('user-profile');
+});
+
+Route::get('/{name}', "UserController@index");
     return view('homepage');
 });
 Route::get('course', 'CourseController@index');

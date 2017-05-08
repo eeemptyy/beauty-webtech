@@ -4,10 +4,18 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="utf-8">
     <title></title>
+    <style media="screen">
+      table, td ,th{
+        border: 1px solid black;
+      }
+      td,td{
+        padding:10px;
+      }
+    </style>
   </head>
   <body>
     <table class='table'>
-      
+
 
     </table>
     <style media="screen">
@@ -20,7 +28,7 @@
     </style>
   </head>
   <body>
-    <table class="table">
+      <table class="table">
               <thead>
                   <tr>
                     <th>ID</th>
