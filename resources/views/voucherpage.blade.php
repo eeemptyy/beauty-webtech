@@ -5,6 +5,7 @@
     <title>voucher</title>
     <link href='//fonts.googleapis.com/css?family=Kanit' rel='stylesheet'>
     <link rel="stylesheet" media="screen" href="css/bulma.css">
+    <link href='//fonts.googleapis.com/css?family=Fredoka One' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
@@ -13,14 +14,15 @@
   </head>
   <body style="font-family:Kanit; background: url(img/bg.png); background-attachment:fixed;">
 
-    <section class="hero is-danger is-medium">
+    <section class="hero is-danger is-medium" style="font-family:Fredoka One; background-color:	#F08080; ">
       <!-- Hero header: will stick at the top -->
       <div class="hero-head">
         <header class="nav">
           <div class="container">
             <div class="nav-left">
               <a class="nav-item">
-                <!-- <img src="images/bulma-type-white.png" alt="Logo"> -->
+                    KU Beauty Clinic
+                <!-- <img src="img/logo.png" alt="Logo" > -->
               </a>
             </div>
             <span class="nav-toggle">
@@ -30,21 +32,13 @@
             </span>
             <div class="nav-right nav-menu">
               <a class="nav-item is-active">
-                Home
+                Login
               </a>
               <a class="nav-item">
-                Examples
-              </a>
-              <a class="nav-item">
-                Documentation
+                Register
               </a>
               <span class="nav-item">
-                <a class="button is-primary is-inverted">
-                  <span class="icon">
-                    <i class="fa fa-github"></i>
-                  </span>
-                  <span>Download</span>
-                </a>
+
               </span>
             </div>
           </div>
@@ -52,30 +46,30 @@
       </div>
 
       <!-- Hero content: will be in the middle -->
-      <!-- <div class="hero-body"> -->
-        <div class="container has-text-centered">
-          <h1 class="title">
+      <br>
+        <div class="container has-text-centered"   style="font-size:70px">
             Beauty Clinic
-          </h1>
-          <h2 class="subtitle">
-            คลีนิคเสริมความงาม
-          </h2>
+            <div class="column "><img class="column is-2 is-offset-1"src= "img/gift-vouchers.jpg" style="width:80%"></div>
         </div>
-      <!-- </div> -->
-<div class="column "><img class="column is-2 is-offset-1"src= "img/gift-vouchers.jpg" style="width:80%"></div>
+        <br>
+
       <!-- Hero footer: will stick at the bottom -->
       <div class="hero-foot">
-        <nav class="tabs">
-          <div class="container">
+        <nav class="tabs is-boxed is-fullwidth">
+          <div class="container" style="font-size:20px;">
             <ul>
-              <li ><a href="/">Home</a></li>
-              <li><a href="service">Service</a></li>
-              <li class="is-active"><a>Voucher</a></li>
+              <ul >
+                <li ><a href="/">Home</a></li>
+                <li ><a href="service">Service</a></li>
+                <li class="is-active"><a  >Voucher</a></li>
             </ul>
           </div>
         </nav>
       </div>
     </section>
+
+  <br><br><br><br>
+
 
 
 
@@ -84,10 +78,11 @@
   <h2>Animated Slides</h2>
   <p>Slide or fade in an element from the top, bottom, left or right of the screen with the w3-animate-* classes.</p>
 </div> -->
-<div class="w3-content w3-section" style="max-width:500px">
+<div class="w3-content w3-section" >
 @foreach($data as $a)
 @if($a->type_id=='2')
-<img class="mySlides w3-animate-left"style="width:100%" src='{{$a->pic_path}}' alt='Test test'>
+
+<img class="mySlides w3-animate-left"style="width:100%" src='img/{{$a->pic_path}}' alt='Test test'>
 @endif
 @endforeach
 </div>
@@ -100,8 +95,8 @@
 
 <div class="column is-half has-text-centered" >
 
-
-  <img style="width:50%" src= "{{$data[$j]->pic_path}}" >
+<br><br><br><br><br><br>
+  <img style="width:80%" src= "img/{{$data[$j]->pic_path}}" >
 
 
 </div>
@@ -121,16 +116,7 @@
 
 
 
- <!-- <div class="column"> -->
-  <!-- <div  v-for="n in 5">    loop in database แบ่งตามประเภท v-for='data in allcourse database' v-if(type=ทริตเม้น)--> -->
-   <!-- <div class="click"> Division @{{n}} <img src="https://lh6.googleusercontent.com/-KHuovUcXCB0/T9P30NeOhyI/AAAAAAAACbI/Yt8JvRP8s6g/s24/plus.png" onclick="descw(this)" ></div>
-   <div class="desc">
-   <img src="https://lh6.googleusercontent.com/-wbz6cuxM6Tw/T9P30GA6azI/AAAAAAAACbM/O1eECuA2J7o/s24/minus.png" onclick="descc(this)" style="float:right; margin: 3px 10px 5px 5px;" >
-   <p>Description @{{num}}</p>
-   </div>
-   </div> -->
- <!-- </div> -->
-<!-- </div> -->
+
 </div>
 @endif
 @endfor
