@@ -87,7 +87,7 @@
 
                                     <select name="course_id">
                                       @foreach ($courses as $course)
-                                      @if ($course->status == '1')
+                                      @if ($course->status == '1' && $course->type_id == '1')
                                           <option value={{$course->id}}>{{$course->name}}</option>
                                       @endif
                                       @endforeach

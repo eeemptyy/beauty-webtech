@@ -48,7 +48,8 @@ class PromotionController extends Controller
             'date_start' => $var['date_start'],
             'date_end' => $var['date_end'],
         ]);
-        return view('promotion');
+        $courses = Course::all();
+        return view('promotion', ['courses' => $courses ]);
     }
 
     /**

@@ -11,8 +11,11 @@
 |
 */
 
+Route::get('service', function () {
+    return view('servicepage');
+});
 Route::get('/', function () {
-    return view('welcome');
+    return view('homepage');
 });
 
 Route::get('course', 'CourseController@index');
@@ -25,8 +28,27 @@ Route::get('promotion', 'PromotionController@index');
 //   return View::make('promotion')->with('Course', $courses);
 // });
 // Route::get('course/create', 'CourseController@create');
-// Route::post('promotion', 'PromotionController@store');
+Route::post('promotion', 'PromotionController@store');
 
 Route::get('get-service', 'HistoryController@index');
 // Route::get('course/create', 'CourseController@create');
 Route::post('get-service', 'HistoryController@store');
+Route::get('voucher', function () {
+    return view('voucherpage');
+});
+
+Route::get('/{$name}', 'UserController@index');
+// Route::get('service', function () {
+//     return view('servicepage');
+// });
+// Route::get('/', function () {
+//     return view('homepage');
+// });
+
+Route::get('voucher',"CourseController@select_voucher");
+Route::get('service',"CourseController@select_course");
+Route::get('/',"CourseController@select_promotion");
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

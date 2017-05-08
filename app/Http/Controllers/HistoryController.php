@@ -8,6 +8,7 @@ use App\Course;
 use App\User;
 use App\CouresCouter;
 use Illuminate\Http\Request;
+use DB;
 use DateTime;
 
 class HistoryController extends Controller
@@ -20,11 +21,10 @@ class HistoryController extends Controller
     public function index()
     {
         //
-        $types = CourseType::all();
+        // $types = CourseType::all();
         $services = Course::all();
         $users = User::all();
-        return view('get-service', ['types' => $types, 'services' => $services, 'users' => $users]);
-        // return view('get-service');
+        return view('get-service', [ 'services' => $services, 'users' => $users]);
     }
 
     /**
@@ -46,12 +46,13 @@ class HistoryController extends Controller
     public function store(Request $request)
     {
         //'user_id', 'course_id', 'date_purchase'
-        $types = CourseType::all();
+        $var = $request->all();
+        $this->updatePoint($var);
+
+        // $types = CourseType::all();
         $services = Course::all();
         $users = User::all();
 
-
-        $var = $request->all();
         History::create([
             'user_id' => $var['user_id'],
             'course_id' => $var['course_id'],
@@ -60,10 +61,9 @@ class HistoryController extends Controller
         // 'course_id', 'counter', 'date'
         // CouresCouter::create([
         //   'course_id' => $var['course_id'],
-        //
-        //
         // ]);
-        return view('get-service', ['types' => $types, 'services' => $services, 'users' => $users]);
+
+        return view('get-service', [ 'services' => $services, 'users' => $users]);
     }
 
     /**
@@ -72,6 +72,26 @@ class HistoryController extends Controller
      * @param  \App\History  $history
      * @return \Illuminate\Http\Response
      */
+    public function updatePoint($data) {
+
+      $user = DB::table('users')->where('id', $data['user_id'])->first();
+      $service = DB::table('courses')->where('id',$data['course_id'])->first();
+      $oldPoint = $user->point;
+
+      // 1 = coures , 2 = vorcher
+
+      if ($service->type_id == 1){
+        DB::table('users')
+            ->where('id', $data['user_id'])
+            ->update(['point' => $oldPoint + $service->bonus_point]);
+      }
+      elseif ($service->type_id == 2) {
+        # code...
+        DB::table('users')
+            ->where('id', $data['user_id'])
+            ->update(['point' => $oldPoint - $service->bonus_point]);
+      }
+    }
     public function show(History $history)
     {
         //
@@ -98,7 +118,35 @@ class HistoryController extends Controller
     public function update(Request $request, History $history)
     {
         //
+        $validation = Validator::make(Input::all(),
+        array(
+            'name'      => 'required|max:100',
+            'address'   => 'required|min:3',
+        )
+    );
+
+
+    if($validation->fails()) {
+       //withInput keep the users info
+      //  return Redirect::back()->withInput()->withErrors($validation->messages());
+   } else {
+
+       $customer = Input::get('id');
+       $name = Input::get('name');
+// firstname', 'lastname', 'email', 'password', 'role_id'
+      //  User::where('id', $customer)->update(array(
+      //      'name'    =>  $name,
+      //      'address' =>  $address,
+      //      'city'  => $city,
+      //      'postcode' => $postcode,
+      //      'phone' => $phone,
+      //      'mobile' => $mobile,
+      //      'email' => $email,
+      //      'contact' => $contact,
+      //      'user_id'  => $user
+      //  ));
     }
+  }
 
     /**
      * Remove the specified resource from storage.

@@ -10,4 +10,12 @@ class Course extends Model
         'name', 'detail', 'price', 'bonus_point',
          'status', 'type_id', 'category', 'pic_path'
     ];
+    protected  $visible = [
+        'name', 'detail', 'price', 'bonus_point',
+         'status', 'type_id', 'category', 'pic_path'
+    ];
+
+
+
+
 }
