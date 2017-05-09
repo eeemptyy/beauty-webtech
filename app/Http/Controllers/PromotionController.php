@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Promotion;
 use App\Course;
 use Illuminate\Http\Request;
+use DB;
 
 class PromotionController extends Controller
 {
@@ -17,7 +18,16 @@ class PromotionController extends Controller
     {
         //
         $courses = Course::all();
-        return View('createService' ,['courses' => $courses ]);
+        $course = DB::table('courses')->where('type_id',2)->get();
+        return view('voucherTB', [
+        'course' => $course,'courses' => $courses]);
+    }
+
+    public function getAllCourses()
+    {
+        //
+        $courses = Course::all();
+        return ['courses' => $courses];
     }
 
     /**
@@ -38,9 +48,21 @@ class PromotionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $var = $request->all();
+        app('App\Http\Controllers\EmailController')->sendNews($var);
+        Promotion::create([
+            'course_id' => $var['course_id'],
+            'discount' => $var['discount'],
+            'date_start' => $var['date_start'],
+            'date_end' => $var['date_end']
+        ]);
         $courses = Course::all();
-        return view('createService', ['courses' => $courses]);
+        $course = DB::table('courses')->where('type_id',2)->get();
+        return view('voucherTB', [
+            'course' => $course,
+            'courses' => $courses
+        ]);
     }
 
     /**

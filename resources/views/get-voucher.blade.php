@@ -74,14 +74,6 @@
             <form action="/get-voucher" method = "post">
               {{ csrf_field() }}
 
-              <!-- <label for="">Service Type: </label>
-                <span class="select">
-                    <select id="first_box" name="Select_id">
-                      <option value="1">coures</option>
-                      <option value="2">vorcher</option>
-                    </select>
-                </span> -->
-
                 <table>
                   <tr>
                     <td><label>Voucher Name: </label></td>
@@ -124,20 +116,6 @@
                     <td><input type="date" name="date_purchase" required></td>
                    </tr>
                 </table>
-
-                <!-- <button id="myBtn" type="submit">Submit</button> -->
-                <!-- <input type="submit" value="Submit"> -->
-                <!-- <button class="" type="reset">Clear</button> -->
-                <!-- <input type="reset" value="Clear"> -->
-                <!-- <div id="id01" class="w3-modal">
-                <div class="w3-modal-content">
-                  <div class="w3-container">
-                    <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-                    <p>Some text. Some text. Some text.</p>
-                    <p>Some text. Some text. Some text.</p>
-                  </div>
-                </div>
-              </div> -->
           </div>
           <div class="modal-footer">
               <button  class="btn btn-default" id="myBtn" type="submit">Submit</button>

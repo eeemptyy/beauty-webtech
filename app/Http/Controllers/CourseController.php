@@ -121,64 +121,23 @@ class CourseController extends Controller
           $p = '';
           $b = '';
           $p1 = '';
-              // if ($name == ''){
-              //     $n = "Name not Null!";
-              //     return view("course",
-              //     ['nameNull' => $n]);
-              // }
-              // if ($detail == '') {
-              //   $d = "Detail not Null!";
-              //   return view("course",[
-              //     'DetailNull' => $d]);
-              // }
-              // if ($price == '') {
-              //   $p1 = "Price not Null!";
-              //   return view("course",[
-              //     'PriceNull' => $p1]);
-              // }
-              // if ($bouns == '') {
-              //   $b = "Bonus Point not Null!";
-              //   return view("course",[
-              //     'BounsNull' => $b]);
-              // }
-              // if ($pic == '') {
-              //   $p = "Picture not Null!";
-              //   return view("course",[
-              //     'PictureNull' => $p]);
-              // }
-
-              // if ($name == ''){
-              //     $n = "Name not Null!";
-              //
-              // // if ($detail == '') {
-              // //   $d = "Detail not Null!";
-              // // }
-              // // if ($price == '') {
-              // //   $p1 = "Price not Null!";
-              // // }
-              // // if ($bouns == '') {
-              // //   $b = "Bonus Point not Null!";
-              // // }
-              // // if ($pic == '') {
-              // //   $p = "Picture not Null!";
-              //   return view("course",[
-              //     'nameNull' => $n
-              //   ]);
-                  // 'nameNull' => $n,'DetailNull' => $d, 'PriceNull' => $p1, 'BounsNull' => $b,'PictureNull' => $p]);
-
-            // }
-            //   else {
-                Course::create([
-                    'name' => $var['name'],
-                    'detail' => $var['detail'],
-                    'price' => $var['price'],
-                    'bonus_point' => $var['bonus_point'],
-                    'status' => $var['status'],
-                    'type_id' => $var['type_id'],
-                    'category' => $var['category'],
-                    'pic_path' => $var['pic_path']
-                ]);
-                return view('createService');
+        Course::create([
+            'name' => $var['name'],
+            'detail' => $var['detail'],
+            'price' => $var['price'],
+            'bonus_point' => $var['bonus_point'],
+            'status' => $var['status'],
+            'type_id' => $var['type_id'],
+            'category' => $var['category'],
+            'pic_path' => $var['pic_path']
+        ]);
+        app('App\Http\Controllers\EmailController')->send();
+        $courses = Course::all();
+        $user = DB::table('users')->get();
+        return view('userTB',[
+                'user' => $user,
+                'courses' => $courses
+        ]);
               // }
 //
         // return view('course');

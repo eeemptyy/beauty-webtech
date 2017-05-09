@@ -22,7 +22,7 @@
 <div class="w3-content w3-section "  id="vue-app" style="padding:20px;">
   @foreach($data as $a)
 
-  <a href='service'> <img class="mySlides w3-animate-left"style="width:30% ; margin:auto;" src='{{$a->pic_path}}' alt='Slide' > </a>
+  <a href='service'> <img class="mySlides w3-animate-left"style="width:70% ; margin:auto;" src='img/{{$a->pic_path}}' alt='Slide' > </a>
 
   @endforeach
 

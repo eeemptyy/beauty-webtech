@@ -73,6 +73,7 @@ class UserController extends Controller
    * @param  \App\Role  $role
    * @return \Illuminate\Http\Response
    */
+  }
   public function destroy(Role $role)
   {
       //

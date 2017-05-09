@@ -34,7 +34,7 @@ Route::get('voucher', function () {
     return view('voucherpage');
 });
 
-Route::get('/{$name}', 'UserController@index');
+Route::get('/profile', 'UserController@index');
 
 Route::get('voucher',"CourseController@select_voucher");
 
@@ -73,9 +73,8 @@ Route::get('userTB', "UserTBController@show");
 Route::get('courseTB', "CourseTBController@show");
 Route::get('voucherTB', "VoucherTBController@show");
 
-Route::post('change', function () {
-	return view('changepass');
-});
 
 Route::get('change-password', function() {return view('change-password'); });
 Route::post('change-password', 'ChangePasswordController@update');
+
+Route::get('/get-all-courses', 'PromotionController@getAllCourses');

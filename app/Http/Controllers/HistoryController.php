@@ -81,7 +81,13 @@ class HistoryController extends Controller
             'course_id' => $var['course_id'],
             'date_purchase' => new DateTime(),
         ]);
-        return view('get-service', [ 'services' => $services, 'users' => $users]);
+      $course = DB::table('courses')->where('type_id',1)->get();
+
+      return view('courseTB',[
+        'course' => $course,
+        'services' => $services, 
+        'users' => $users
+      ]);
     }
 
     /**
@@ -111,7 +117,13 @@ class HistoryController extends Controller
         //   'course_id' => $var['course_id'],
         // ]);
 
-        return view('get-voucher', [ 'services' => $services, 'users' => $users]);
+      $course = DB::table('courses')->where('type_id',1)->get();
+
+      return view('courseTB',[
+        'course' => $course,
+        'services' => $services, 
+        'users' => $users
+      ]);
     }
 
     public function updatePoint($data)

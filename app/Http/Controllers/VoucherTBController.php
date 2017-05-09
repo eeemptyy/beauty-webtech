@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use App\Course;
+use App\User;
+
 
 class VoucherTBController extends Controller
 {
@@ -47,10 +50,13 @@ class VoucherTBController extends Controller
      */
     public function show()
     {
+        $services = Course::all();
+        $users = User::all();
       $course = DB::table('courses')->where('type_id',2)->get();
-
       return view('voucherTB',[
-        'course' => $course
+        'course' => $course,
+        'services' => $services, 
+        'users' => $users
       ]);
 
     }

@@ -78,9 +78,11 @@ $pic=array("img/10.png","img/11.png","img/12.png","img/13.png","img/14.png")
 @endif
 @endfor
 
-  <div class="click"> {{$data[$i]->name}}   ราคา : {{$data[$i]->price}} บาท   <img style="width:3%" src="img/down-arrow.png" onclick="descw(this)" ></div>
+  <div class="click"   style="border-radius: 25px; background: 	#FFB6C1; padding: 20px; margin-top:5px; font-size:20px;"> {{$data[$i]->name}}   ราคา : {{$data[$i]->price}} บาท   <img style="width:3%" src="img/down-arrow.png" onclick="descw(this)" ></div>
 
-  <div class="desc">
+  <div class="desc"  style="display: none; border-radius: 25px;
+    border: 2px solid red; background: 	#fff;
+    padding: 20px;  margin-top:5px; font-size:18px;" >
   <img img  src="img/up-arrow.png" onclick="descc(this)" style="float:right; margin: 3px 10px 5px 5px; width:3%;">
   <p>{{$data[$i]->detail}}</p>
   </div>

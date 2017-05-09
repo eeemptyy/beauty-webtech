@@ -32,7 +32,7 @@
 @foreach($data as $a)
 @if($a->type_id=='2')
 
-<img class="mySlides w3-animate-left"style="width:30%" src='{{$a->pic_path}}' alt='Test test'>
+<img class="mySlides w3-animate-left"style="width:70%" src='img/{{$a->pic_path}}' alt='Test test'>
 @endif
 @endforeach
 </div>
@@ -46,7 +46,7 @@
 <div class="column is-half has-text-centered" >
 
 <br><br><br><br><br><br>
-  <img style="width:80%" src= "{{$data[$j]->pic_path}}" >
+  <img style="width:50%" src= "img/{{$data[$j]->pic_path}}" >
 
 
 </div>
@@ -56,7 +56,9 @@
  <div class="tag is-danger is-large"> Voucher : {{$data[$j]->name}}   ใช้  {{$data[$j]->price}} Point </div>
 
  <br><br>
- <div class="desc">
+<div class="desc"  style=" border-radius: 25px;
+    border: 2px solid red; background: 	#fff;
+    padding: 20px;  margin-top:5px; font-size:18px;">
  <!-- <img src="https://lh6.googleusercontent.com/-wbz6cuxM6Tw/T9P30GA6azI/AAAAAAAACbM/O1eECuA2J7o/s24/minus.png" onclick="descc(this)" style="float:right; margin: 3px 10px 5px 5px;" > -->
  <p>{{$data[$j]->detail}}</p>
  </div>

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use App\Course;
+use App\User;
 
 class UserTBController extends Controller
 {
@@ -46,7 +48,7 @@ class UserTBController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show()
-    {
+    {   
       $user = DB::table('users')->get();
       // foreach ($history as $data){
       //   echo $data->user_id;
@@ -57,9 +59,14 @@ class UserTBController extends Controller
       //   'firstname' => $user->firstname,
       //   'lastname' => $user->lastname,
       //   'email' => $user->email,
-      //   'point' => $user->point,
+      //   'point' => $user->point
+      
+        $services = Course::all();
+        $users = User::all();
       return view('userTB',[
-        'user' => $user
+        'user' => $user,
+        'services' => $services, 
+        'users' => $users
       ]);
     //]);
     }
