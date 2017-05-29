@@ -102,6 +102,18 @@
     <img class="" src="1.png" style="width:100%">
 </div> -->
 
+@if (Auth::guest())
+    <br/>
+    asddddddddddddddd
+@else
+    @include('layouts.serviceModal')
+    @include('layouts.promoModal')
+    @include('layouts.vorcherModal')
+    @include('layouts.courseModal')
+@endif
+
+
+
 <script>
 var myIndex = 0;
 carousel();

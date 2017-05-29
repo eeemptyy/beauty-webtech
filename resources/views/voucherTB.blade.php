@@ -35,3 +35,14 @@
     </div>
 </div>
 @endsection
+
+
+@if (Auth::guest())
+    <br/>
+    asddddddddddddddd
+@else
+    @include('layouts.serviceModal')
+    @include('layouts.promoModal')
+    @include('layouts.vorcherModal')
+    @include('layouts.courseModal')
+@endif

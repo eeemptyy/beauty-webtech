@@ -14,9 +14,7 @@
 Route::get('service', function () {
     return view('servicepage');
 });
-Route::get('/', function () {
-    return view('homepage');
-});
+// Route::get('/', "HomePageController@show");
 
 Route::get('course', 'CourseController@index');
 Route::post('course', 'CourseController@store');
@@ -78,3 +76,4 @@ Route::get('change-password', function() {return view('change-password'); });
 Route::post('change-password', 'ChangePasswordController@update');
 
 Route::get('/get-all-courses', 'PromotionController@getAllCourses');
+Route::get('/get-all-users', 'PromotionController@getAllCourses');

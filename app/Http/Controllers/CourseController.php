@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 use App\Course;
 use Illuminate\Http\Request;
 use View;
+use App\User;
 
 class CourseController extends Controller
 {
@@ -26,7 +27,17 @@ class CourseController extends Controller
      }
      public function select_promotion(){
        $data = DB::table('courses')->join('promotions','promotions.course_id','=','courses.id')->get();
-       return view('homepage',['data' => $data]);
+
+        $user = DB::table('users')->get();
+        $services = Course::all();
+        $users = User::all();
+
+       return view('homepage',[
+           'data' => $data,
+            'user' => $user,
+            'services' => $services, 
+            'users' => $users
+        ]);
      }
      public function select_course(){
        $data_promotion = DB::table('courses')->join('promotions','promotions.course_id','=','courses.id')->get();
